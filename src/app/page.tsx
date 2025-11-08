@@ -458,6 +458,69 @@ export default function HomePage() {
             </Typography>
           </Paper>
         </Stack>
+
+        {/* Legal Disclaimer */}
+        <Box
+          sx={{
+            mt: 6,
+            p: 3,
+            backgroundColor: (theme) => 
+              theme.palette.mode === 'dark' 
+                ? 'rgba(15, 23, 42, 0.6)'
+                : 'rgba(241, 245, 249, 0.8)',
+            borderRadius: 2,
+            border: 1,
+            borderColor: 'divider',
+            maxWidth: 800,
+            mx: 'auto',
+          }}
+        >
+          <Typography 
+            variant="overline" 
+            sx={{ 
+              display: 'block',
+              color: 'text.secondary',
+              fontWeight: 600,
+              mb: 1,
+              letterSpacing: 1.2,
+            }}
+          >
+            Legal Disclaimer
+          </Typography>
+          <Typography 
+            variant="body2" 
+            sx={{ 
+              color: 'text.secondary',
+              fontFamily: 'var(--font-geist-mono)',
+              fontSize: '0.75rem',
+              lineHeight: 1.6,
+              mb: 2,
+            }}
+          >
+            * Compensation packages may include Universal Opportunities Credit Units (UOCU), 
+            planetary mineral rights certificates, and exclusive access to company recreational 
+            facilities on Europa Station. <strong>Compensation not exchangeable for monetary value.</strong> 
+            UOCU may be redeemed for company store merchandise, cafeteria meals, and basic life 
+            support services. Void where prohibited by Galactic Commerce Regulations. 
+            Universal Opportunities is not responsible for temporal displacement, 
+            rover-induced psychological attachment, or accidental discovery of sentient mineral formations.
+          </Typography>
+          <Typography 
+            variant="body2" 
+            sx={{ 
+              color: 'text.secondary',
+              fontFamily: 'var(--font-geist-mono)',
+              fontSize: '0.7rem',
+              fontStyle: 'italic',
+              opacity: 0.8,
+            }}
+          >
+            By accessing this portal, you acknowledge that remote work may involve actual remoteness 
+            measured in astronomical units. Company-provided rover insurance does not cover existential 
+            crises caused by viewing the Earth as a pale blue dot. Professional counseling available 
+            through HR Department, Subsection Q, Form 847-B.
+          </Typography>
+        </Box>
       </Container>
     </DashboardLayout>
   );
