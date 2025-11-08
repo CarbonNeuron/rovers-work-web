@@ -17,6 +17,16 @@ export const metadata: Metadata = {
   title: 'rovers.work - Universal Opportunities Remote Operations Portal',
   description:
     'Remote mining rover operations portal for Universal Opportunities contractors',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-16.svg', type: 'image/svg+xml', sizes: '16x16' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.svg', type: 'image/svg+xml', sizes: '180x180' },
+    ],
+  },
 };
 
 export default function RootLayout({

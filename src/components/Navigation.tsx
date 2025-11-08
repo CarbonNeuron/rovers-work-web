@@ -104,12 +104,36 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
       {/* Header */}
       <Box sx={{ p: 3, borderBottom: 1, borderColor: 'divider' }}>
         <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Typography variant="h6" component="div" sx={{ fontWeight: 600 }}>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ 
+              fontWeight: 600,
+              background: 'linear-gradient(45deg, #2563eb 30%, #10b981 90%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              // Fallback for browsers that don't support gradient text
+              '@supports not (-webkit-background-clip: text)': {
+                color: (theme) => 
+                  theme.palette.mode === 'dark' 
+                    ? theme.palette.grey[100] 
+                    : theme.palette.grey[100]
+              }
+            }}
+          >
             Universal Opportunities
           </Typography>
           <Typography
             variant="caption"
-            sx={{ color: 'text.secondary', mt: 0.5, display: 'block' }}
+            sx={{ 
+              color: (theme) => 
+                theme.palette.mode === 'dark' 
+                  ? theme.palette.grey[400] 
+                  : theme.palette.grey[300],
+              mt: 0.5, 
+              display: 'block' 
+            }}
           >
             Remote Operations Portal
           </Typography>
@@ -131,7 +155,14 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
                 onClick={handleDrawerToggle}
                 sx={{ mx: 1, borderRadius: 1 }}
               >
-                <ListItemIcon sx={{ color: '#f1f5f9' }}>
+                <ListItemIcon 
+                  sx={{ 
+                    color: (theme) => 
+                      theme.palette.mode === 'dark' 
+                        ? theme.palette.grey[100] 
+                        : theme.palette.grey[100] 
+                  }}
+                >
                   <IconComponent />
                 </ListItemIcon>
                 <ListItemText
@@ -144,6 +175,20 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
                   secondaryTypographyProps={{
                     fontSize: '0.75rem',
                     display: { xs: 'none', md: 'block' },
+                  }}
+                  sx={{
+                    '& .MuiListItemText-primary': {
+                      color: (theme) => 
+                        theme.palette.mode === 'dark' 
+                          ? theme.palette.grey[100] 
+                          : theme.palette.grey[100],
+                    },
+                    '& .MuiListItemText-secondary': {
+                      color: (theme) => 
+                        theme.palette.mode === 'dark' 
+                          ? theme.palette.grey[400] 
+                          : theme.palette.grey[300],
+                    },
                   }}
                 />
               </ListItemButton>
