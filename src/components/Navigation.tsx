@@ -120,7 +120,7 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
                 onClick={handleDrawerToggle}
                 sx={{ mx: 1, borderRadius: 1 }}
               >
-                <ListItemIcon sx={{ color: 'text.primary' }}>
+                <ListItemIcon sx={{ color: '#f1f5f9' }}>
                   <IconComponent />
                 </ListItemIcon>
                 <ListItemText
