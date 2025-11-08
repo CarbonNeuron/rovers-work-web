@@ -1,26 +1,44 @@
-# Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
+# Custom Source-Available License with Commercial Protection
 
 ## rovers.work - Universal Opportunities Remote Operations Portal
 
 Copyright (c) 2025 CarbonNeuron
 
-This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+### Grant of Rights
 
-### You are free to:
+Subject to the terms and conditions of this license, the copyright holder grants you a worldwide, royalty-free, non-exclusive license to:
 
-- **Share** — copy and redistribute the material in any medium or format
+1. **Use** the software for personal, educational, and non-commercial purposes
+2. **Study** the source code and learn from the implementation
+3. **Modify** the software for personal use and educational purposes
+4. **Contribute** improvements back to this repository via pull requests
+5. **Redistribute** the original or modified software under the same license terms
 
-The licensor cannot revoke these freedoms as long as you follow the license terms.
+### Restrictions
 
-### Under the following terms:
+You **MAY NOT**:
 
-- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- Use this software, in whole or in part, for **commercial purposes** without explicit written permission
+- Create a **competing commercial service** based on the concepts, designs, or code
+- Use the "Universal Opportunities" branding, fictional universe, or associated intellectual property for commercial purposes
+- Remove or modify copyright notices and license information
+- Grant sublicenses or transfer rights to third parties for commercial use
 
-- **NonCommercial** — You may not use the material for commercial purposes.
+### Contributions
 
-- **NoDerivatives** — If you remix, transform, or build upon the material, you may not distribute the modified material.
+- **Contributions Welcome**: Pull requests, bug reports, and improvements are encouraged
+- **Contributor Agreement**: By contributing, you agree that your contributions will be licensed under the same terms
+- **Ownership**: Contributors retain copyright to their contributions but grant the project maintainer perpetual rights to use, modify, and distribute the contributions
+- **Commercial Rights**: The project maintainer reserves the right to use contributions in commercial licensing agreements
 
-- **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+### Commercial Use
+
+For commercial licensing, partnerships, or use in commercial products, contact:
+
+**GitHub**: [@CarbonNeuron](https://github.com/CarbonNeuron)  
+**Repository**: https://github.com/CarbonNeuron/rovers-work-web
+
+Commercial licenses are available and may include different terms and conditions.
 
 ### Notices:
 

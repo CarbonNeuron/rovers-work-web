@@ -185,21 +185,62 @@ Modify `src/theme/theme.ts` to customize:
 
 ## 🤝 Contributing
 
-This project uses a specific fictional universe and corporate identity. Please ensure any contributions maintain the "Universal Opportunities" theme and corporate aesthetic.
+**Contributions are welcome and encouraged!** Help improve the Universal Opportunities remote operations experience while maintaining the corporate aesthetic and fictional universe integrity.
 
-### Development Guidelines
+### How to Contribute
 
-- Follow the established TypeScript patterns
-- Use Material-UI components with custom theming
-- Maintain SSR compatibility
-- Test across light/dark themes
-- Ensure mobile responsiveness
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### Contribution Guidelines
+
+- **Theme Consistency**: Maintain the "Universal Opportunities" corporate aesthetic
+- **Code Quality**: Follow established TypeScript and React patterns
+- **UI Standards**: Use Material-UI components with existing theme system
+- **Compatibility**: Ensure SSR compatibility and cross-browser support
+- **Testing**: Test functionality across light/dark themes and mobile devices
+- **Documentation**: Update relevant documentation for new features
+
+### Types of Contributions Welcome
+
+- 🐛 **Bug Fixes**: Improve functionality and user experience
+- ✨ **New Features**: Add to the rover operations ecosystem
+- 🎨 **UI Improvements**: Enhance the corporate dashboard aesthetic  
+- 📱 **Mobile Enhancements**: Improve responsive design
+- 🔧 **Performance**: Optimize loading times and animations
+- 📚 **Documentation**: Improve setup guides and code documentation
+- 🧪 **Testing**: Add test coverage and quality assurance
+
+### Fictional Universe Guidelines
+
+When contributing, please respect the established lore:
+- Maintain the "friendly dystopia" corporate tone
+- Keep the space mining and remote operations theme
+- Preserve the Universal Opportunities branding consistency
+- Add features that fit the in-universe technology level
 
 ## 📄 License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under a **Custom Source-Available License with Commercial Protection** - see the [LICENSE](LICENSE) file for full details.
 
-**Summary**: You may view and reference this code for learning purposes, but you may not use it for commercial purposes or create derivative works without explicit permission.
+### License Summary
+
+✅ **Allowed**:
+- Personal and educational use
+- Learning from and studying the code  
+- Contributing improvements via pull requests
+- Modifying for personal/educational purposes
+- Redistributing under the same license
+
+❌ **Restricted**:
+- Commercial use without permission
+- Creating competing commercial services
+- Using Universal Opportunities branding commercially
+
+**For Commercial Use**: Contact [@CarbonNeuron](https://github.com/CarbonNeuron) for licensing options.
 
 ## 🎯 Roadmap
 
