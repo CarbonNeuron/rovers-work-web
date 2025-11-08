@@ -16,8 +16,6 @@ import {
   Box,
   Chip,
   IconButton,
-  useTheme as useMuiTheme,
-  useMediaQuery,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -91,7 +89,6 @@ interface NavigationProps {
 
 export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
   const pathname = usePathname();
-  const muiTheme = useMuiTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -184,16 +181,16 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
       {/* Mobile App Bar */}
       <AppBar 
         position="fixed" 
-        sx={{ 
+        sx={(theme) => ({
           display: { xs: 'block', md: 'none' },
-          zIndex: (theme) => theme.zIndex.drawer + 1,
+          zIndex: theme.zIndex.drawer + 1,
           backgroundColor: '#1e293b',
           color: '#f1f5f9',
-          ...muiTheme.applyStyles('dark', {
+          ...theme.applyStyles('dark', {
             backgroundColor: '#020617',
             color: '#e2e8f0',
           }),
-        }}
+        })}
       >
         <Toolbar>
           <IconButton
@@ -216,7 +213,7 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
       {/* Desktop Permanent Drawer */}
       <Drawer
         variant="permanent"
-        sx={{
+        sx={(theme) => ({
           display: { xs: 'none', md: 'block' },
           width: DRAWER_WIDTH,
           flexShrink: 0,
@@ -226,13 +223,13 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
             backgroundColor: '#1e293b',
             color: '#f1f5f9',
             borderRight: '1px solid #334155',
-            ...muiTheme.applyStyles('dark', {
+            ...theme.applyStyles('dark', {
               backgroundColor: '#020617',
               color: '#e2e8f0',
               borderRight: '1px solid #475569',
             }),
           },
-        }}
+        })}
       >
         {drawerContent}
       </Drawer>
@@ -245,23 +242,23 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
         ModalProps={{
           keepMounted: true, // Better open performance on mobile.
         }}
-        sx={{
+        sx={(theme) => ({
           display: { xs: 'block', md: 'none' },
           height: "100dvh",
-          zIndex: (theme) => theme.zIndex.appBar + 1,
+          zIndex: theme.zIndex.appBar + 1,
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: DRAWER_WIDTH,
             backgroundColor: '#1e293b',
             color: '#f1f5f9',
             borderRight: '1px solid #334155',
-            ...muiTheme.applyStyles('dark', {
+            ...theme.applyStyles('dark', {
               backgroundColor: '#020617',
               color: '#e2e8f0',
               borderRight: '1px solid #475569',
             }),
           },
-        }}
+        })}
       >
         {drawerContent}
       </Drawer>
