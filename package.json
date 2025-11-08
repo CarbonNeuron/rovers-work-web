@@ -40,5 +40,16 @@
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    "Chrome >= 94",
+    "Firefox >= 93",
+    "Safari >= 15",
+    "Edge >= 94",
+    "iOS >= 15",
+    "Android >= 94",
+    "not IE 11",
+    "not dead",
+    "not < 2%"
+  ]
 }
