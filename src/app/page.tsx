@@ -464,15 +464,13 @@ export default function HomePage() {
           sx={{
             mt: 6,
             p: 3,
-            backgroundColor: (theme) => 
-              theme.palette.mode === 'dark' 
-                ? 'rgba(15, 23, 42, 0.6)'
-                : 'rgba(241, 245, 249, 0.8)',
+            backgroundColor: 'background.paper',
             borderRadius: 2,
             border: 1,
             borderColor: 'divider',
             maxWidth: 800,
             mx: 'auto',
+            opacity: 0.9,
           }}
         >
           <Typography 
