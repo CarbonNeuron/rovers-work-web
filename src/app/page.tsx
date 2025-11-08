@@ -2,198 +2,462 @@ import React from 'react';
 import {
   Container,
   Typography,
-  Grid,
-  Paper,
   Box,
-  Button,
+  Paper,
+  Card,
+  CardContent,
+  Chip,
   Stack,
+  Divider,
+  Button,
 } from '@mui/material';
 import {
-  SmartToy as RoverIcon,
-  AccountBalance as CreditsIcon,
-  Assignment as ContractIcon,
-  CheckCircle as StatusIcon,
-  Add as DeployIcon,
-  TrendingUp as MarketIcon,
-  Assignment as BoardIcon,
+  Business as BusinessIcon,
+  Rocket as RocketIcon,
+  Diamond as DiamondIcon,
+  Public as PublicIcon,
+  Engineering as EngineeringIcon,
+  TrendingUp as TrendingUpIcon,
+  Security as SecurityIcon,
+  Groups as GroupsIcon,
+  Login as PortalIcon,
 } from '@mui/icons-material';
 import DashboardLayout from '@/components/DashboardLayout';
 
-const MetricCard = ({
-  title,
-  value,
-  label,
-  icon: Icon,
-}: {
-  title: string;
-  value: string | number;
-  label: string;
-  icon: React.ElementType;
-}) => (
-  <Paper
-    elevation={2}
-    sx={{
-      p: { xs: 2, sm: 3 },
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      transition: 'all 0.2s ease',
-      '&:hover': {
-        elevation: 4,
-        transform: 'translateY(-2px)',
-      },
-    }}
-  >
-    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-      <Icon sx={{ color: 'primary.main', mr: 1 }} />
-      <Typography
-        variant="subtitle2"
-        color="text.secondary"
-        textTransform="uppercase"
-      >
-        {title}
-      </Typography>
-    </Box>
-    <Typography
-      variant="h3"
-      component="div"
-      sx={{ 
-        mb: 1, 
-        fontFamily: 'var(--font-geist-mono)',
-        fontSize: { xs: '1.5rem', sm: '2rem' }
-      }}
-    >
-      {value}
-    </Typography>
-    <Typography variant="caption" color="text.secondary">
-      {label}
-    </Typography>
-  </Paper>
-);
-
-export default function Home() {
+export default function HomePage() {
   return (
     <DashboardLayout>
       <Container maxWidth={false} sx={{ py: { xs: 2, sm: 4 }, px: { xs: 2, sm: 3 } }}>
-        {/* Header */}
-        <Box sx={{ mb: { xs: 3, sm: 4 } }}>
+        {/* Header Section */}
+        <Box sx={{ mb: { xs: 4, sm: 6 } }}>
           <Typography 
             variant="h1" 
             component="h1" 
             gutterBottom
             sx={{
-              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.5rem' },
-              textAlign: { xs: 'center', sm: 'left' }
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+              textAlign: { xs: 'center', sm: 'left' },
+              background: 'linear-gradient(45deg, #2563eb 30%, #10b981 90%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              mb: 2,
             }}
           >
-            Welcome to Universal Opportunities
+            Universal Opportunities
           </Typography>
           <Typography 
-            variant="h6" 
+            variant="h4" 
             color="text.secondary"
             sx={{
-              fontSize: { xs: '1rem', sm: '1.25rem' },
-              textAlign: { xs: 'center', sm: 'left' }
+              fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' },
+              textAlign: { xs: 'center', sm: 'left' },
+              mb: 3,
             }}
           >
-            Remote Operations Portal
+            Leading the Future of Deep Space Mining Operations
           </Typography>
-        </Box>
-
-        {/* Metrics Grid */}
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: {
-              xs: '1fr',
-              sm: 'repeat(2, 1fr)',
-              lg: 'repeat(4, 1fr)',
-            },
-            gap: { xs: 2, sm: 3 },
-            mb: { xs: 4, sm: 6 },
-          }}
-        >
-          <MetricCard
-            title="Active Rovers"
-            value={3}
-            label="Currently Deployed"
-            icon={RoverIcon}
-          />
-          <MetricCard
-            title="Credits Balance"
-            value="12,450"
-            label="UO Credits"
-            icon={CreditsIcon}
-          />
-          <MetricCard
-            title="Active Contracts"
-            value={2}
-            label="Pending Completion"
-            icon={ContractIcon}
-          />
-          <MetricCard
-            title="System Status"
-            value="Operational"
-            label="All Systems Green"
-            icon={StatusIcon}
-          />
-        </Box>
-
-        {/* Quick Actions */}
-        <Paper elevation={1} sx={{ p: { xs: 3, sm: 4 } }}>
           <Typography 
-            variant="h2" 
-            component="h2" 
-            gutterBottom
+            variant="body1" 
             sx={{ 
-              fontSize: { xs: '1.25rem', sm: '1.5rem' },
-              textAlign: { xs: 'center', sm: 'left' }
+              fontSize: { xs: '1rem', sm: '1.125rem' },
+              textAlign: { xs: 'center', sm: 'left' },
+              maxWidth: '800px',
+              color: 'text.secondary',
+              mb: 4,
             }}
           >
-            Quick Actions
+            Pioneering remote-controlled mining operations across the galaxy through 
+            innovative technology and strategic partnerships with Earth-based contractors.
           </Typography>
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+          
+          {/* Call to Action Button */}
+          <Box sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
             <Button
-              href="/rovers"
+              href="/portal"
               variant="contained"
               size="large"
-              startIcon={<DeployIcon />}
+              startIcon={<PortalIcon />}
               sx={{ 
-                py: { xs: 1.25, sm: 1.5 },
-                fontSize: { xs: '0.875rem', sm: '1rem' }
+                py: { xs: 1.5, sm: 2 },
+                px: { xs: 3, sm: 4 },
+                fontSize: { xs: '1rem', sm: '1.125rem' },
+                fontWeight: 600,
+                borderRadius: 2,
+                background: 'linear-gradient(45deg, #2563eb 30%, #10b981 90%)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #1d4ed8 30%, #059669 90%)',
+                  transform: 'translateY(-2px)',
+                },
+                transition: 'all 0.2s ease',
               }}
-              fullWidth={true}
             >
-              Deploy New Rover
+              Access Portal
             </Button>
+          </Box>
+        </Box>
+
+        <Stack spacing={6}>
+          {/* Mission Statement */}
+          <Paper 
+            elevation={2}
+            sx={{ 
+              p: { xs: 3, sm: 4, md: 6 },
+              background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%)',
+              border: '1px solid',
+              borderColor: 'primary.main',
+              borderRadius: 3,
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+              <BusinessIcon sx={{ fontSize: 40, color: 'primary.main', mr: 2 }} />
+              <Typography 
+                variant="h2" 
+                component="h2"
+                sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}
+              >
+                Our Mission
+              </Typography>
+            </Box>
+            <Typography 
+              variant="body1" 
+              sx={{ 
+                fontSize: { xs: '1rem', sm: '1.125rem' },
+                lineHeight: 1.7,
+                mb: 2,
+              }}
+            >
+              At Universal Opportunities, we believe in connecting talented individuals on Earth 
+              with lucrative mining operations across distant planets. Our cutting-edge remote 
+              operations portal enables contractors to control advanced mining rovers from the 
+              comfort of their homes while earning competitive compensation.
+            </Typography>
+            <Typography 
+              variant="body1" 
+              sx={{ 
+                fontSize: { xs: '1rem', sm: '1.125rem' },
+                lineHeight: 1.7,
+                fontStyle: 'italic',
+                color: 'text.secondary',
+              }}
+            >
+              "Bridging worlds, creating opportunities, building the future—one mining 
+              operation at a time."
+            </Typography>
+          </Paper>
+
+          {/* Core Services */}
+          <Box>
+            <Typography 
+              variant="h2" 
+              component="h2" 
+              gutterBottom
+              sx={{ 
+                fontSize: { xs: '1.5rem', sm: '2rem' },
+                mb: 4,
+                textAlign: { xs: 'center', sm: 'left' }
+              }}
+            >
+              Core Services & Operations
+            </Typography>
+
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: {
+                  xs: '1fr',
+                  md: 'repeat(2, 1fr)',
+                },
+                gap: 3,
+              }}
+            >
+              <Card sx={{ height: '100%', border: '1px solid', borderColor: 'divider' }}>
+                <CardContent sx={{ p: 3 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                    <RocketIcon sx={{ fontSize: 32, color: 'primary.main', mr: 2 }} />
+                    <Typography variant="h5" component="h3">
+                      Remote Rover Operations
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    State-of-the-art fleet management system allowing Earth-based operators 
+                    to control mining rovers across multiple planets and sectors in real-time.
+                  </Typography>
+                  <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                    <Chip label="Real-time Control" size="small" variant="outlined" />
+                    <Chip label="Multi-Planet Operations" size="small" variant="outlined" />
+                    <Chip label="Advanced HUD Systems" size="small" variant="outlined" />
+                  </Stack>
+                </CardContent>
+              </Card>
+
+              <Card sx={{ height: '100%', border: '1px solid', borderColor: 'divider' }}>
+                <CardContent sx={{ p: 3 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                    <DiamondIcon sx={{ fontSize: 32, color: 'primary.main', mr: 2 }} />
+                    <Typography variant="h5" component="h3">
+                      Resource Trading Markets
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    Dynamic pricing systems and galactic market integration for optimal 
+                    resource trading and maximum contractor profitability.
+                  </Typography>
+                  <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                    <Chip label="Dynamic Pricing" size="small" variant="outlined" />
+                    <Chip label="Market Analytics" size="small" variant="outlined" />
+                    <Chip label="Automated Trading" size="small" variant="outlined" />
+                  </Stack>
+                </CardContent>
+              </Card>
+
+              <Card sx={{ height: '100%', border: '1px solid', borderColor: 'divider' }}>
+                <CardContent sx={{ p: 3 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                    <EngineeringIcon sx={{ fontSize: 32, color: 'primary.main', mr: 2 }} />
+                    <Typography variant="h5" component="h3">
+                      Fabrication & Production
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    Automated fabrication facilities and production queues for crafting 
+                    advanced equipment and infrastructure at remote outposts.
+                  </Typography>
+                  <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                    <Chip label="Automated Production" size="small" variant="outlined" />
+                    <Chip label="Custom Recipes" size="small" variant="outlined" />
+                    <Chip label="Queue Management" size="small" variant="outlined" />
+                  </Stack>
+                </CardContent>
+              </Card>
+
+              <Card sx={{ height: '100%', border: '1px solid', borderColor: 'divider' }}>
+                <CardContent sx={{ p: 3 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                    <PublicIcon sx={{ fontSize: 32, color: 'primary.main', mr: 2 }} />
+                    <Typography variant="h5" component="h3">
+                      Inter-Planetary Logistics
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    Comprehensive logistics network managing travel, resource transport, 
+                    and supply chains across multiple star systems.
+                  </Typography>
+                  <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                    <Chip label="Travel Systems" size="small" variant="outlined" />
+                    <Chip label="Supply Chains" size="small" variant="outlined" />
+                    <Chip label="Sector Management" size="small" variant="outlined" />
+                  </Stack>
+                </CardContent>
+              </Card>
+            </Box>
+          </Box>
+
+          {/* Company Values */}
+          <Paper elevation={1} sx={{ p: { xs: 3, sm: 4 } }}>
+            <Typography 
+              variant="h2" 
+              component="h2" 
+              gutterBottom
+              sx={{ 
+                fontSize: { xs: '1.5rem', sm: '2rem' },
+                mb: 4,
+                textAlign: { xs: 'center', sm: 'left' }
+              }}
+            >
+              Our Core Values
+            </Typography>
+
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: {
+                  xs: '1fr',
+                  sm: 'repeat(2, 1fr)',
+                  md: 'repeat(4, 1fr)',
+                },
+                gap: 4,
+              }}
+            >
+              <Box sx={{ textAlign: 'center' }}>
+                <TrendingUpIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
+                <Typography variant="h6" gutterBottom color="primary.main">
+                  Innovation
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Pioneering cutting-edge technology to revolutionize remote operations 
+                  and deep space exploration.
+                </Typography>
+              </Box>
+
+              <Box sx={{ textAlign: 'center' }}>
+                <GroupsIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
+                <Typography variant="h6" gutterBottom color="primary.main">
+                  Partnership
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Building lasting relationships with contractors and stakeholders 
+                  for mutual success and growth.
+                </Typography>
+              </Box>
+
+              <Box sx={{ textAlign: 'center' }}>
+                <SecurityIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
+                <Typography variant="h6" gutterBottom color="primary.main">
+                  Reliability
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Ensuring consistent, secure, and dependable operations across 
+                  all our interplanetary mining ventures.
+                </Typography>
+              </Box>
+
+              <Box sx={{ textAlign: 'center' }}>
+                <DiamondIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
+                <Typography variant="h6" gutterBottom color="primary.main">
+                  Excellence
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Maintaining the highest standards in safety, efficiency, 
+                  and contractor satisfaction across all operations.
+                </Typography>
+              </Box>
+            </Box>
+          </Paper>
+
+          {/* Corporate Structure */}
+          <Box>
+            <Typography 
+              variant="h2" 
+              component="h2" 
+              gutterBottom
+              sx={{ 
+                fontSize: { xs: '1.5rem', sm: '2rem' },
+                mb: 4,
+                textAlign: { xs: 'center', sm: 'left' }
+              }}
+            >
+              Corporate Overview
+            </Typography>
+
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: {
+                  xs: '1fr',
+                  md: 'repeat(2, 1fr)',
+                },
+                gap: 4,
+              }}
+            >
+              <Paper elevation={1} sx={{ p: 3, height: '100%' }}>
+                <Typography variant="h5" gutterBottom color="primary.main">
+                  🏢 Company Structure
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  Universal Opportunities operates as a megacorporation with extensive 
+                  reach across multiple star systems and planetary operations.
+                </Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="body2" color="text.secondary">
+                  <strong>Industry:</strong> Deep Space Mining & Resource Extraction<br/>
+                  <strong>Founded:</strong> 2387 GST (Galactic Standard Time)<br/>
+                  <strong>Headquarters:</strong> Luna City, Earth's Moon<br/>
+                  <strong>Operations:</strong> 47 Star Systems, 180+ Planets
+                </Typography>
+              </Paper>
+
+              <Paper elevation={1} sx={{ p: 3, height: '100%' }}>
+                <Typography variant="h5" gutterBottom color="primary.main">
+                  🎯 Business Model
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  We connect Earth-based contractors with remote mining opportunities 
+                  through our advanced rover control systems and profit-sharing agreements.
+                </Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="body2" color="text.secondary">
+                  <strong>Revenue Streams:</strong> Contract Mining, Resource Trading, 
+                  Technology Licensing<br/>
+                  <strong>Contractor Network:</strong> 15,000+ Active Operators<br/>
+                  <strong>Success Rate:</strong> 94.7% Project Completion
+                </Typography>
+              </Paper>
+            </Box>
+          </Box>
+
+          {/* Call to Action */}
+          <Paper 
+            elevation={2}
+            sx={{ 
+              p: { xs: 3, sm: 4, md: 6 },
+              textAlign: 'center',
+              background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)',
+              border: '1px solid',
+              borderColor: 'primary.main',
+              borderRadius: 3,
+            }}
+          >
+            <Typography 
+              variant="h3" 
+              component="h2" 
+              gutterBottom
+              sx={{ 
+                fontSize: { xs: '1.25rem', sm: '1.75rem' },
+                color: 'primary.main'
+              }}
+            >
+              Ready to Join Our Operations?
+            </Typography>
+            <Typography 
+              variant="body1" 
+              sx={{ 
+                fontSize: { xs: '1rem', sm: '1.125rem' },
+                mb: 3,
+                maxWidth: '600px',
+                mx: 'auto',
+                color: 'text.secondary',
+              }}
+            >
+              Universal Opportunities offers competitive compensation packages, 
+              comprehensive training programs, and the chance to be part of humanity's 
+              expansion into the cosmos. Your expertise in remote operations could 
+              unlock opportunities beyond imagination.
+            </Typography>
             <Button
-              href="/market"
-              variant="outlined"
+              href="/portal"
+              variant="contained"
               size="large"
-              startIcon={<MarketIcon />}
+              startIcon={<PortalIcon />}
               sx={{ 
-                py: { xs: 1.25, sm: 1.5 },
-                fontSize: { xs: '0.875rem', sm: '1rem' }
+                py: { xs: 1.5, sm: 2 },
+                px: { xs: 3, sm: 4 },
+                fontSize: { xs: '1rem', sm: '1.125rem' },
+                fontWeight: 600,
+                borderRadius: 2,
+                background: 'linear-gradient(45deg, #2563eb 30%, #10b981 90%)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #1d4ed8 30%, #059669 90%)',
+                  transform: 'translateY(-2px)',
+                },
+                transition: 'all 0.2s ease',
+                mb: 2,
               }}
-              fullWidth={true}
             >
-              Check Market Prices
+              Access Operations Portal
             </Button>
-            <Button
-              href="/company-board"
-              variant="outlined"
-              size="large"
-              startIcon={<BoardIcon />}
+            <Typography 
+              variant="body2" 
               sx={{ 
-                py: { xs: 1.25, sm: 1.5 },
-                fontSize: { xs: '0.875rem', sm: '1rem' }
+                fontStyle: 'italic',
+                color: 'text.secondary',
+                fontFamily: 'var(--font-geist-mono)',
               }}
-              fullWidth={true}
             >
-              View Contracts
-            </Button>
-          </Stack>
-        </Paper>
+              "The universe is vast, but opportunity is universal."
+            </Typography>
+          </Paper>
+        </Stack>
       </Container>
     </DashboardLayout>
   );

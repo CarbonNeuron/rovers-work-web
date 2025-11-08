@@ -21,22 +21,23 @@ import {
 } from '@mui/material';
 import {
   Menu as MenuIcon,
-  Home as HomeIcon,
+  Dashboard as PortalIcon,
   SmartToy as RoverIcon,
   Public as PlanetIcon,
   TrendingUp as MarketIcon,
   Build as FabricationIcon,
   Assignment as BoardIcon,
   Person as ProfileIcon,
+  Info as AboutIcon,
 } from '@mui/icons-material';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 const navigationItems = [
   {
-    href: '/',
-    label: 'Remote Operations Portal',
-    description: 'Operations Dashboard',
-    icon: HomeIcon,
+    href: '/portal',
+    label: 'Operations Portal',
+    description: 'Mission Dashboard',
+    icon: PortalIcon,
   },
   {
     href: '/rovers',
@@ -73,6 +74,12 @@ const navigationItems = [
     label: 'Profile',
     description: 'Operator Status',
     icon: ProfileIcon,
+  },
+  {
+    href: '/',
+    label: 'About',
+    description: 'Company Information',
+    icon: AboutIcon,
   },
 ];
 
