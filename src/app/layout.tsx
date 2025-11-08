@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Noto_Color_Emoji } from 'next/font/google';
 import MUISetup from '@/components/MUISetup';
 import { theme } from '@/theme/theme';
 
@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const notoColorEmoji = Noto_Color_Emoji({
+  variable: '--font-noto-emoji',
+  subsets: ['emoji'],
+  weight: '400',
+});
+
 export const metadata: Metadata = {
   title: 'rovers.work - Universal Opportunities Remote Operations Portal',
   description:
@@ -20,8 +26,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-16.svg', type: 'image/svg+xml', sizes: '16x16' },
-      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon-16.svg', type: 'image/svg+xml', sizes: '16x16' }
     ],
     apple: [
       { url: '/apple-touch-icon.svg', type: 'image/svg+xml', sizes: '180x180' },
@@ -37,7 +42,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body 
-        className={`${geistSans.variable} ${geistMono.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoColorEmoji.variable}`}
         suppressHydrationWarning={true}
       >
         <MUISetup theme={theme}>

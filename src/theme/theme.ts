@@ -107,7 +107,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif',
+    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif, var(--font-noto-emoji), "Apple Color Emoji", "Segoe UI Emoji"',
     h1: {
       fontSize: '2rem',
       fontWeight: 600,
