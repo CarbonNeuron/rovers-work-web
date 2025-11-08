@@ -29,6 +29,7 @@ import {
   Info as AboutIcon,
 } from '@mui/icons-material';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
+import UniversalOpportunitiesText from '@/components/UniversalOpportunitiesText';
 
 const navigationItems = [
   {
@@ -104,26 +105,12 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
       {/* Header */}
       <Box sx={{ p: 3, borderBottom: 1, borderColor: 'divider' }}>
         <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Typography 
+          <UniversalOpportunitiesText 
             variant="h6" 
-            component="div" 
-            sx={{ 
-              fontWeight: 600,
-              background: 'linear-gradient(45deg, #2563eb 30%, #10b981 90%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              // Fallback for browsers that don't support gradient text
-              '@supports not (-webkit-background-clip: text)': {
-                color: (theme) => 
-                  theme.palette.mode === 'dark' 
-                    ? theme.palette.grey[100] 
-                    : theme.palette.grey[100]
-              }
-            }}
-          >
-            Universal Opportunities
-          </Typography>
+            component="div"
+            speed={0.8}
+            pauseOnHover={true}
+          />
           <Typography
             variant="caption"
             sx={{ 
@@ -248,9 +235,13 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
             <MenuIcon />
           </IconButton>
           <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <Typography variant="h6" noWrap component="div">
-              Universal Opportunities
-            </Typography>
+            <UniversalOpportunitiesText 
+              variant="h6" 
+              noWrap 
+              component="div"
+              speed={0.6}
+              pauseOnHover={true}
+            />
           </Link>
         </Toolbar>
       </AppBar>

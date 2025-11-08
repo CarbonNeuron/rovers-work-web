@@ -23,6 +23,7 @@ import {
   Login as PortalIcon,
 } from '@mui/icons-material';
 import DashboardLayout from '@/components/DashboardLayout';
+import UniversalOpportunitiesText from '@/components/UniversalOpportunitiesText';
 
 export default function HomePage() {
   return (
@@ -32,22 +33,18 @@ export default function HomePage() {
     >
       {/* Header Section */}
       <Box sx={{ mb: { xs: 4, sm: 6 } }}>
-        <Typography
+        <UniversalOpportunitiesText
           variant="h1"
           component="h1"
           gutterBottom
+          speed={0.5}
+          pauseOnHover={true}
           sx={{
             fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
             textAlign: { xs: 'center', sm: 'left' },
-            background: 'linear-gradient(45deg, #2563eb 30%, #10b981 90%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
             mb: 2,
           }}
-        >
-          Universal Opportunities
-        </Typography>
+        />
         <Typography
           variant="h4"
           color="text.secondary"

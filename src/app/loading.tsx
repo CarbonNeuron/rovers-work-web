@@ -1,6 +1,7 @@
 import { Box, CircularProgress, Typography, Fade } from '@mui/material';
 import { SmartToy } from '@mui/icons-material';
 import DashboardLayout from '@/components/DashboardLayout';
+import UniversalOpportunitiesText from '@/components/UniversalOpportunitiesText';
 
 export default function Loading() {
   return (
@@ -97,29 +98,13 @@ export default function Loading() {
 
           {/* Company branding */}
           <Box sx={{ textAlign: 'center' }}>
-            <Typography
+            <UniversalOpportunitiesText
               variant="h5"
+              speed={1.2}
               sx={{
-                fontWeight: 600,
                 mb: 1,
-                background: 'linear-gradient(45deg, #2563eb 30%, #10b981 90%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                animation: 'shimmer 2s ease-in-out infinite',
-                '@keyframes shimmer': {
-                  '0%': {
-                    backgroundPosition: '-200% 0',
-                  },
-                  '100%': {
-                    backgroundPosition: '200% 0',
-                  },
-                },
-                backgroundSize: '200% auto',
               }}
-            >
-              Universal Opportunities
-            </Typography>
+            />
             <Typography
               variant="body2"
               sx={{
