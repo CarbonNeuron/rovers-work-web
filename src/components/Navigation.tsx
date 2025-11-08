@@ -231,6 +231,7 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
         }}
         sx={{
           display: { xs: 'block', md: 'none' },
+          height: "100dvh",
           zIndex: (theme) => theme.zIndex.appBar + 1,
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
