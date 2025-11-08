@@ -21,6 +21,7 @@ import {
 } from '@mui/material';
 import {
   Menu as MenuIcon,
+  Home as HomeIcon,
   SmartToy as RoverIcon,
   Public as PlanetIcon,
   TrendingUp as MarketIcon,
@@ -31,6 +32,12 @@ import {
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 const navigationItems = [
+  {
+    href: '/',
+    label: 'Remote Operations Portal',
+    description: 'Operations Dashboard',
+    icon: HomeIcon,
+  },
   {
     href: '/rovers',
     label: 'Rovers',
@@ -191,9 +198,11 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Universal Opportunities
-          </Typography>
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography variant="h6" noWrap component="div">
+              Universal Opportunities
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>
 
