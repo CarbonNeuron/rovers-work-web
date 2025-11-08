@@ -182,18 +182,63 @@ export const theme = createTheme({
     MuiListItemButton: {
       styleOverrides: {
         root: ({ theme }) => ({
+          // Smooth transitions for all interactive states
+          transition: 'all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)',
+          position: 'relative',
+          overflow: 'hidden',
+          
+          // Default state
+          backgroundColor: 'transparent',
+          borderLeft: '3px solid transparent',
+          
+          // Hover state with gentle fade-in
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.08)',
+            transform: 'translateX(2px)',
+            ...theme.applyStyles('dark', {
+              backgroundColor: 'rgba(255, 255, 255, 0.08)',
+            }),
+          },
+          
+          // Selected state with rich color fade-in
           '&.Mui-selected': {
-            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+            backgroundColor: 'rgba(37, 99, 235, 0.15)',
             borderLeft: '3px solid #2563eb',
+            transform: 'translateX(4px)',
+            
+            // Add a subtle glow effect
+            boxShadow: 'inset 0 0 20px rgba(37, 99, 235, 0.1)',
+            
+            // Selected + hover combination
             '&:hover': {
-              backgroundColor: 'rgba(37, 99, 235, 0.2)',
+              backgroundColor: 'rgba(37, 99, 235, 0.25)',
+              transform: 'translateX(6px)',
+              boxShadow: 'inset 0 0 25px rgba(37, 99, 235, 0.15)',
+            },
+            
+            // Animate the border color as well
+            borderLeftColor: '#2563eb',
+            
+            // Enhanced text color for selected items
+            '& .MuiListItemText-primary': {
+              color: '#ffffff !important',
+              fontWeight: '600 !important',
+            },
+            
+            '& .MuiListItemText-secondary': {
+              color: 'rgba(255, 255, 255, 0.8) !important',
+            },
+            
+            '& .MuiListItemIcon-root': {
+              color: '#ffffff !important',
             },
           },
-          '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.05)',
-            ...theme.applyStyles('dark', {
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
-            }),
+          
+          // Focus state for accessibility
+          '&.Mui-focusVisible': {
+            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+            outline: '2px solid rgba(37, 99, 235, 0.5)',
+            outlineOffset: '-2px',
           },
         }),
       },
