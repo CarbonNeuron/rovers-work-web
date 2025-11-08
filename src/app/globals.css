@@ -1,12 +1,48 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Universal Opportunities Corporate Colors */
+  --uo-primary: #2563eb; /* Professional blue */
+  --uo-primary-dark: #1d4ed8; /* Darker blue for interactions */
+  --uo-secondary: #64748b; /* Corporate gray */
+  --uo-accent: #10b981; /* Success/profit green */
+  --uo-warning: #f59e0b; /* Alert/caution amber */
+  --uo-danger: #ef4444; /* Error/critical red */
+
+  /* Background System */
+  --background: #fafbfc; /* Light corporate background */
+  --background-elevated: #ffffff; /* Cards, panels */
+  --background-muted: #f1f5f9; /* Subtle sections */
+
+  /* Text System */
+  --foreground: #0f172a; /* Primary text */
+  --foreground-secondary: #475569; /* Secondary text */
+  --foreground-muted: #64748b; /* Muted text */
+
+  /* Border System */
+  --border: #e2e8f0; /* Default borders */
+  --border-strong: #cbd5e1; /* Emphasized borders */
+
+  /* Corporate Dashboard Specific */
+  --dashboard-nav: #1e293b; /* Dark navigation */
+  --dashboard-nav-text: #f1f5f9; /* Nav text color */
+  --dashboard-nav-active: var(--uo-primary); /* Active nav item */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark Mode Corporate Theme */
+    --background: #0f172a;
+    --background-elevated: #1e293b;
+    --background-muted: #334155;
+
+    --foreground: #f1f5f9;
+    --foreground-secondary: #cbd5e1;
+    --foreground-muted: #94a3b8;
+
+    --border: #334155;
+    --border-strong: #475569;
+
+    --dashboard-nav: #020617;
+    --dashboard-nav-text: #e2e8f0;
   }
 }
 
@@ -19,9 +55,10 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
 * {

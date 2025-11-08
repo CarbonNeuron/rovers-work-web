@@ -1,66 +1,200 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from 'react';
+import {
+  Container,
+  Typography,
+  Grid,
+  Paper,
+  Box,
+  Button,
+  Stack,
+} from '@mui/material';
+import {
+  SmartToy as RoverIcon,
+  AccountBalance as CreditsIcon,
+  Assignment as ContractIcon,
+  CheckCircle as StatusIcon,
+  Add as DeployIcon,
+  TrendingUp as MarketIcon,
+  Assignment as BoardIcon,
+} from '@mui/icons-material';
+import DashboardLayout from '@/components/DashboardLayout';
+
+const MetricCard = ({
+  title,
+  value,
+  label,
+  icon: Icon,
+}: {
+  title: string;
+  value: string | number;
+  label: string;
+  icon: React.ElementType;
+}) => (
+  <Paper
+    elevation={2}
+    sx={{
+      p: { xs: 2, sm: 3 },
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      transition: 'all 0.2s ease',
+      '&:hover': {
+        elevation: 4,
+        transform: 'translateY(-2px)',
+      },
+    }}
+  >
+    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+      <Icon sx={{ color: 'primary.main', mr: 1 }} />
+      <Typography
+        variant="subtitle2"
+        color="text.secondary"
+        textTransform="uppercase"
+      >
+        {title}
+      </Typography>
+    </Box>
+    <Typography
+      variant="h3"
+      component="div"
+      sx={{ 
+        mb: 1, 
+        fontFamily: 'var(--font-geist-mono)',
+        fontSize: { xs: '1.5rem', sm: '2rem' }
+      }}
+    >
+      {value}
+    </Typography>
+    <Typography variant="caption" color="text.secondary">
+      {label}
+    </Typography>
+  </Paper>
+);
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <DashboardLayout>
+      <Container maxWidth={false} sx={{ py: { xs: 2, sm: 4 }, px: { xs: 2, sm: 3 } }}>
+        {/* Header */}
+        <Box sx={{ mb: { xs: 3, sm: 4 } }}>
+          <Typography 
+            variant="h1" 
+            component="h1" 
+            gutterBottom
+            sx={{
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.5rem' },
+              textAlign: { xs: 'center', sm: 'left' }
+            }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Welcome to Universal Opportunities
+          </Typography>
+          <Typography 
+            variant="h6" 
+            color="text.secondary"
+            sx={{
+              fontSize: { xs: '1rem', sm: '1.25rem' },
+              textAlign: { xs: 'center', sm: 'left' }
+            }}
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            Remote Operations Portal
+          </Typography>
+        </Box>
+
+        {/* Metrics Grid */}
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: '1fr',
+              sm: 'repeat(2, 1fr)',
+              lg: 'repeat(4, 1fr)',
+            },
+            gap: { xs: 2, sm: 3 },
+            mb: { xs: 4, sm: 6 },
+          }}
+        >
+          <MetricCard
+            title="Active Rovers"
+            value={3}
+            label="Currently Deployed"
+            icon={RoverIcon}
+          />
+          <MetricCard
+            title="Credits Balance"
+            value="12,450"
+            label="UO Credits"
+            icon={CreditsIcon}
+          />
+          <MetricCard
+            title="Active Contracts"
+            value={2}
+            label="Pending Completion"
+            icon={ContractIcon}
+          />
+          <MetricCard
+            title="System Status"
+            value="Operational"
+            label="All Systems Green"
+            icon={StatusIcon}
+          />
+        </Box>
+
+        {/* Quick Actions */}
+        <Paper elevation={1} sx={{ p: { xs: 3, sm: 4 } }}>
+          <Typography 
+            variant="h2" 
+            component="h2" 
+            gutterBottom
+            sx={{ 
+              fontSize: { xs: '1.25rem', sm: '1.5rem' },
+              textAlign: { xs: 'center', sm: 'left' }
+            }}
+          >
+            Quick Actions
+          </Typography>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+            <Button
+              href="/rovers"
+              variant="contained"
+              size="large"
+              startIcon={<DeployIcon />}
+              sx={{ 
+                py: { xs: 1.25, sm: 1.5 },
+                fontSize: { xs: '0.875rem', sm: '1rem' }
+              }}
+              fullWidth={true}
+            >
+              Deploy New Rover
+            </Button>
+            <Button
+              href="/market"
+              variant="outlined"
+              size="large"
+              startIcon={<MarketIcon />}
+              sx={{ 
+                py: { xs: 1.25, sm: 1.5 },
+                fontSize: { xs: '0.875rem', sm: '1rem' }
+              }}
+              fullWidth={true}
+            >
+              Check Market Prices
+            </Button>
+            <Button
+              href="/company-board"
+              variant="outlined"
+              size="large"
+              startIcon={<BoardIcon />}
+              sx={{ 
+                py: { xs: 1.25, sm: 1.5 },
+                fontSize: { xs: '0.875rem', sm: '1rem' }
+              }}
+              fullWidth={true}
+            >
+              View Contracts
+            </Button>
+          </Stack>
+        </Paper>
+      </Container>
+    </DashboardLayout>
   );
 }
