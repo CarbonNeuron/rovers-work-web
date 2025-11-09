@@ -40,7 +40,7 @@ const uoColors = {
 
 export const theme = createTheme({
   cssVariables: {
-    colorSchemeSelector: "class",
+    colorSchemeSelector: 'class',
   },
   colorSchemes: {
     light: {
@@ -107,7 +107,8 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif, var(--font-noto-emoji), "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily:
+      'var(--font-geist-sans), system-ui, sans-serif, var(--font-noto-emoji), "Apple Color Emoji", "Segoe UI Emoji"',
     h1: {
       fontSize: '2rem',
       fontWeight: 600,
@@ -186,11 +187,11 @@ export const theme = createTheme({
           transition: 'all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)',
           position: 'relative',
           overflow: 'hidden',
-          
+
           // Default state
           backgroundColor: 'transparent',
           borderLeft: '3px solid transparent',
-          
+
           // Hover state with gentle fade-in
           '&:hover': {
             backgroundColor: 'rgba(255, 255, 255, 0.08)',
@@ -199,41 +200,41 @@ export const theme = createTheme({
               backgroundColor: 'rgba(255, 255, 255, 0.08)',
             }),
           },
-          
+
           // Selected state with rich color fade-in
           '&.Mui-selected': {
             backgroundColor: 'rgba(37, 99, 235, 0.15)',
             borderLeft: '3px solid #2563eb',
             transform: 'translateX(4px)',
-            
+
             // Add a subtle glow effect
             boxShadow: 'inset 0 0 20px rgba(37, 99, 235, 0.1)',
-            
+
             // Selected + hover combination
             '&:hover': {
               backgroundColor: 'rgba(37, 99, 235, 0.25)',
               transform: 'translateX(6px)',
               boxShadow: 'inset 0 0 25px rgba(37, 99, 235, 0.15)',
             },
-            
+
             // Animate the border color as well
             borderLeftColor: '#2563eb',
-            
+
             // Enhanced text color for selected items
             '& .MuiListItemText-primary': {
               color: '#ffffff !important',
               fontWeight: '600 !important',
             },
-            
+
             '& .MuiListItemText-secondary': {
               color: 'rgba(255, 255, 255, 0.8) !important',
             },
-            
+
             '& .MuiListItemIcon-root': {
               color: '#ffffff !important',
             },
           },
-          
+
           // Focus state for accessibility
           '&.Mui-focusVisible': {
             backgroundColor: 'rgba(37, 99, 235, 0.1)',

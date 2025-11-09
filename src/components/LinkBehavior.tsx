@@ -1,5 +1,5 @@
-import NextLink from "next/link";
-import { ComponentPropsWithoutRef, forwardRef } from "react";
+import NextLink from 'next/link';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 export const LinkBehavior = forwardRef<
   HTMLAnchorElement,
@@ -9,4 +9,4 @@ export const LinkBehavior = forwardRef<
 
   return <NextLink ref={ref} href={href} {...other} />;
 });
-LinkBehavior.displayName = "LinkBehavior";
+LinkBehavior.displayName = 'LinkBehavior';

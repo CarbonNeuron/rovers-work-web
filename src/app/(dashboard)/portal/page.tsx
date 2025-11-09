@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import {
   Container,
   Typography,
-  Grid,
   Paper,
   Box,
   Button,
@@ -12,11 +11,19 @@ import {
 
 export const metadata: Metadata = {
   title: 'Operations Portal - Mission Dashboard',
-  description: 'Universal Opportunities operations portal for managing mining rovers, monitoring missions, and accessing real-time data from remote planetary operations.',
-  keywords: ['operations portal', 'mission dashboard', 'rover management', 'mining operations', 'remote control'],
+  description:
+    'Universal Opportunities operations portal for managing mining rovers, monitoring missions, and accessing real-time data from remote planetary operations.',
+  keywords: [
+    'operations portal',
+    'mission dashboard',
+    'rover management',
+    'mining operations',
+    'remote control',
+  ],
   openGraph: {
     title: 'Operations Portal - Universal Opportunities',
-    description: 'Control and monitor your mining rover operations across distant planets.',
+    description:
+      'Control and monitor your mining rover operations across distant planets.',
     url: '/portal',
   },
 };
@@ -29,7 +36,6 @@ import {
   TrendingUp as MarketIcon,
   Assignment as BoardIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 
 const MetricCard = ({
   title,
@@ -134,7 +140,8 @@ export default function PortalPage() {
             mb: 0.5,
           }}
         >
-          🚧 Universal Opportunities is Currently Deploying Critical Infrastructure
+          🚧 Universal Opportunities is Currently Deploying Critical
+          Infrastructure
         </Typography>
         <Typography
           variant="body2"
@@ -142,7 +149,8 @@ export default function PortalPage() {
             fontSize: { xs: '0.875rem', sm: '0.9375rem' },
           }}
         >
-          Remote planetary operations will be available once inter-system communication links are established
+          Remote planetary operations will be available once inter-system
+          communication links are established
         </Typography>
       </Paper>
 
