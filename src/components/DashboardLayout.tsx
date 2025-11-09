@@ -9,7 +9,6 @@ interface DashboardLayoutProps {
 }
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
-
   return (
     <Box sx={{ display: 'flex' }}>
       <Navigation />

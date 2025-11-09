@@ -2,91 +2,77 @@
 
 import React from 'react';
 import { Typography, TypographyProps } from '@mui/material';
-import { keyframes, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
-// Animated gradient wave keyframes
-const gradientWave = keyframes`
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-`;
-
-// Styled component with animated gradient
-const AnimatedGradientText = styled(Typography)(({ theme }) => ({
+// Professional styled component with subtle brand accent
+const StyledText = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
-  // Default text color first, then gradient overlay
+  letterSpacing: '-0.02em',
   color: theme.palette.mode === 'dark' ? '#f1f5f9' : '#1e293b',
-  background: 'linear-gradient(45deg, #2563eb, #10b981, #2563eb)',
-  backgroundSize: '200% 100%',
-  animation: `${gradientWave} 4s ease-in-out infinite`,
-  
-  // Apply gradient text only if supported
-  '@supports (background-clip: text)': {
-    backgroundClip: 'text',
-    WebkitBackgroundClip: 'text',
-    color: 'transparent',
-    WebkitTextFillColor: 'transparent',
+  position: 'relative',
+  display: 'inline-block',
+
+  // Subtle brand accent underline
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    bottom: '-2px',
+    left: 0,
+    width: '100%',
+    height: '2px',
+    background: 'linear-gradient(90deg, #2563eb 0%, #10b981 100%)',
+    opacity: 0.4,
+    borderRadius: '1px',
+    transition: 'opacity 0.3s ease',
   },
-  
-  // Enhanced gradient for better wave effect
-  '&:hover': {
-    animationDuration: '2s',
+
+  // Enhance underline on hover
+  '&:hover::after': {
+    opacity: 0.7,
   },
 }));
 
-interface UniversalOpportunitiesTextProps extends Omit<TypographyProps, 'children'> {
+interface UniversalOpportunitiesTextProps
+  extends Omit<TypographyProps, 'children'> {
   /**
-   * Animation speed multiplier
-   * @default 1
+   * Show the brand accent underline
+   * @default true
    */
-  speed?: number;
+  showAccent?: boolean;
   /**
-   * Whether to pause animation on hover
-   * @default false
+   * Custom brand color (primary)
+   * @default '#2563eb'
    */
-  pauseOnHover?: boolean;
-  /**
-   * Custom gradient colors
-   * @default ['#2563eb', '#10b981']
-   */
-  colors?: [string, string];
+  accentColor?: string;
 }
 
 /**
- * Reusable Universal Opportunities text component with animated gradient wave effect
- * 
+ * Reusable Universal Opportunities text component with professional styling
+ *
  * Features:
- * - Smooth animated gradient wave that cycles through corporate colors
- * - Customizable speed and colors
- * - Fallback styling for unsupported browsers
- * - Maintains accessibility and typography props
- * - Optimized performance with CSS animations
+ * - Clean, professional typography optimized for corporate branding
+ * - Subtle brand accent underline with gradient (removable)
+ * - Fully compositable with standard Typography props
+ * - Accessible and performant
+ * - Consistent with Universal Opportunities design system
  */
-export default function UniversalOpportunitiesText({ 
-  speed = 1, 
-  pauseOnHover = false,
-  colors = ['#2563eb', '#10b981'],
+export default function UniversalOpportunitiesText({
+  showAccent = true,
+  accentColor = '#2563eb',
   sx = {},
-  ...props 
+  ...props
 }: UniversalOpportunitiesTextProps) {
-  const [primaryColor, secondaryColor] = colors;
-  
   const customSx = {
-    animationDuration: `${4 / speed}s`,
-    // Only override gradient if custom colors are provided
-    ...(primaryColor !== '#2563eb' || secondaryColor !== '#10b981') && {
-      background: `linear-gradient(45deg, ${primaryColor}, ${secondaryColor}, ${primaryColor})`,
-      backgroundSize: '200% 100%',
-    },
-    ...(pauseOnHover && {
-      '&:hover': {
-        animationPlayState: 'paused',
+    // Hide accent if disabled
+    ...(!showAccent && {
+      '&::after': {
+        display: 'none',
+      },
+    }),
+    // Custom accent color if provided
+    ...(accentColor !== '#2563eb' && {
+      '&::after': {
+        background: accentColor,
       },
     }),
     // Apply user sx last to allow overrides
@@ -94,11 +80,8 @@ export default function UniversalOpportunitiesText({
   };
 
   return (
-    <AnimatedGradientText
-      sx={customSx}
-      {...props}
-    >
+    <StyledText sx={customSx} {...props}>
       Universal Opportunities
-    </AnimatedGradientText>
+    </StyledText>
   );
 }

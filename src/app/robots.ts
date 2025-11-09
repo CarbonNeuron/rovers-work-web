@@ -1,8 +1,8 @@
-import { MetadataRoute } from 'next'
- 
+import { MetadataRoute } from 'next';
+
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rovers.work'
-  
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rovers.work';
+
   return {
     rules: [
       {
@@ -11,18 +11,13 @@ export default function robots(): MetadataRoute.Robots {
           '/',
           '/portal',
           '/rovers',
-          '/planets', 
+          '/planets',
           '/market',
           '/fabrication',
           '/company-board',
-          '/profile'
+          '/profile',
         ],
-        disallow: [
-          '/test-scroll',
-          '/loading-test',
-          '/_next/',
-          '/api/'
-        ],
+        disallow: ['/test-scroll', '/loading-test', '/_next/', '/api/'],
       },
       {
         userAgent: 'Googlebot',
@@ -34,15 +29,12 @@ export default function robots(): MetadataRoute.Robots {
           '/market',
           '/fabrication',
           '/company-board',
-          '/profile'
+          '/profile',
         ],
-        disallow: [
-          '/test-scroll',
-          '/loading-test'
-        ],
+        disallow: ['/test-scroll', '/loading-test'],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,
-  }
+  };
 }
