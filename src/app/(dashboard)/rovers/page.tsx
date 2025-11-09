@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import {
   Container,
   Typography,
@@ -9,6 +10,17 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material';
+
+export const metadata: Metadata = {
+  title: 'Rovers - Fleet Management',
+  description: 'Manage your fleet of mining rovers across multiple planets. Monitor rover status, control operations, and track performance metrics in real-time.',
+  keywords: ['rovers', 'fleet management', 'mining robots', 'remote control', 'planetary mining'],
+  openGraph: {
+    title: 'Rovers Fleet Management - Universal Opportunities',
+    description: 'Advanced fleet management system for controlling mining rovers across distant planets.',
+    url: '/rovers',
+  },
+};
 import {
   SmartToy as RoverIcon,
   Dashboard as HudIcon,

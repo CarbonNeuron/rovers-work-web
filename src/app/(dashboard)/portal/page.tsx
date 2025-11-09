@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import {
   Container,
   Typography,
@@ -8,6 +9,17 @@ import {
   Button,
   Stack,
 } from '@mui/material';
+
+export const metadata: Metadata = {
+  title: 'Operations Portal - Mission Dashboard',
+  description: 'Universal Opportunities operations portal for managing mining rovers, monitoring missions, and accessing real-time data from remote planetary operations.',
+  keywords: ['operations portal', 'mission dashboard', 'rover management', 'mining operations', 'remote control'],
+  openGraph: {
+    title: 'Operations Portal - Universal Opportunities',
+    description: 'Control and monitor your mining rover operations across distant planets.',
+    url: '/portal',
+  },
+};
 import {
   SmartToy as RoverIcon,
   AccountBalance as CreditsIcon,
