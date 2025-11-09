@@ -44,7 +44,8 @@ export default function HomePage() {
           variant="h1"
           component="h1"
           gutterBottom
-          showAccent={true}
+          speed={0.5}
+          pauseOnHover={true}
           sx={{
             fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
             textAlign: { xs: 'center', sm: 'left' },

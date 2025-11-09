@@ -108,7 +108,8 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
           <UniversalOpportunitiesText
             variant="h6"
             component="div"
-            showAccent={true}
+            speed={0.8}
+            pauseOnHover={true}
           />
           <Typography
             variant="caption"
@@ -238,7 +239,8 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
               variant="h6"
               noWrap
               component="div"
-              showAccent={true}
+              speed={0.6}
+              pauseOnHover={true}
             />
           </Link>
         </Toolbar>

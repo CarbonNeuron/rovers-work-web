@@ -100,7 +100,7 @@ export default function Loading() {
             <Box sx={{ textAlign: 'center' }}>
               <UniversalOpportunitiesText
                 variant="h5"
-                showAccent={true}
+                speed={1.2}
                 sx={{
                   mb: 1,
                 }}
