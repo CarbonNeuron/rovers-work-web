@@ -1,19 +1,13 @@
 'use client';
 
 import React from 'react';
-import {
-  Container,
-  Typography,
-  Box,
-  Button,
-  Paper,
-  Stack,
-} from '@mui/material';
+import { Button, Paper, Stack, Typography, Box } from '@mui/material';
 import {
   Preview as PreviewIcon,
   Refresh as RefreshIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
+import PageContainer from '@/components/PageContainer';
+import PageHeader from '@/components/PageHeader';
 import Loading from '@/app/loading';
 
 export default function LoadingTestPage() {
@@ -32,34 +26,11 @@ export default function LoadingTestPage() {
   }
 
   return (
-    <Container
-      maxWidth={false}
-      sx={{ py: { xs: 2, sm: 4 }, px: { xs: 2, sm: 3 } }}
-    >
-      {/* Header */}
-      <Box sx={{ mb: { xs: 3, sm: 4 } }}>
-        <Typography
-          variant="h1"
-          component="h1"
-          gutterBottom
-          sx={{
-            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
-            textAlign: { xs: 'center', sm: 'left' },
-          }}
-        >
-          🧪 Loading Component Test
-        </Typography>
-        <Typography
-          variant="h6"
-          color="text.secondary"
-          sx={{
-            fontSize: { xs: '1rem', sm: '1.25rem' },
-            textAlign: { xs: 'center', sm: 'left' },
-          }}
-        >
-          Preview and test the loading screen component
-        </Typography>
-      </Box>
+    <PageContainer>
+      <PageHeader
+        title="🧪 Loading Component Test"
+        subtitle="Preview and test the loading screen component"
+      />
 
       <Stack spacing={4}>
         {/* Preview Section */}
@@ -252,6 +223,6 @@ export default function LoadingTestPage() {
           </Typography>
         </Paper>
       </Stack>
-    </Container>
+    </PageContainer>
   );
 }
