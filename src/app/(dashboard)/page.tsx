@@ -29,8 +29,8 @@ export default function HomePage() {
   return (
     <Container
       maxWidth={false}
-      sx={{ 
-        py: { xs: 2, sm: 4 }, 
+      sx={{
+        py: { xs: 2, sm: 4 },
         px: { xs: 1, sm: 2, md: 3 },
         width: '100%',
         maxWidth: '100%',
@@ -113,7 +113,8 @@ export default function HomePage() {
           borderRadius: 3,
           border: '2px solid',
           borderColor: 'primary.main',
-          background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%)',
+          background:
+            'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%)',
           overflow: 'hidden',
           width: '100%',
           maxWidth: '100%',
@@ -161,7 +162,7 @@ export default function HomePage() {
             </Typography>
           </Box>
         </Box>
-        
+
         {/* Progress Bar */}
         <Box sx={{ mb: 3, overflow: 'hidden' }}>
           <Box
@@ -194,7 +195,7 @@ export default function HomePage() {
                   borderRadius: '50%',
                   border: '1px solid white',
                   boxShadow: '0 1px 4px rgba(6, 214, 160, 0.3)',
-                }
+                },
               }}
             />
           </Box>
@@ -211,10 +212,10 @@ export default function HomePage() {
             Mission Progress: 65% Complete
           </Typography>
         </Box>
-        
+
         {/* Mobile: Vertical Timeline, Desktop: Grid */}
-        <Box 
-          sx={{ 
+        <Box
+          sx={{
             display: { xs: 'flex', md: 'grid' },
             flexDirection: { xs: 'column', md: 'unset' },
             gridTemplateColumns: { md: 'repeat(3, 1fr)' },
@@ -241,7 +242,7 @@ export default function HomePage() {
               '&:hover': {
                 transform: 'translateY(-2px)',
                 elevation: 3,
-              }
+              },
             }}
           >
             <Box
@@ -261,22 +262,22 @@ export default function HomePage() {
               ✅
             </Box>
             <Box sx={{ flex: { xs: 1, md: 'unset' } }}>
-              <Typography 
-                variant="h6" 
-                sx={{ 
-                  mb: { xs: 0.5, md: 1 }, 
+              <Typography
+                variant="h6"
+                sx={{
+                  mb: { xs: 0.5, md: 1 },
                   fontWeight: 600,
-                  fontSize: { xs: '1.125rem', md: '1.125rem' }
+                  fontSize: { xs: '1.125rem', md: '1.125rem' },
                 }}
               >
                 Phase 1: Launch Complete
               </Typography>
-              <Typography 
-                variant="body2" 
-                sx={{ 
+              <Typography
+                variant="body2"
+                sx={{
                   lineHeight: 1.5,
                   fontSize: { xs: '0.875rem', md: '0.875rem' },
-                  mb: { xs: 1, md: 2 }
+                  mb: { xs: 1, md: 2 },
                 }}
               >
                 Communication relay successfully launched from Luna City Station
@@ -290,12 +291,12 @@ export default function HomePage() {
                   display: 'inline-block',
                 }}
               >
-                <Typography 
-                  variant="caption" 
-                  sx={{ 
-                    color: 'white', 
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: 'white',
                     fontWeight: 600,
-                    fontSize: '0.75rem'
+                    fontSize: '0.75rem',
                   }}
                 >
                   COMPLETE
@@ -322,7 +323,7 @@ export default function HomePage() {
               '&:hover': {
                 transform: 'translateY(-2px)',
                 elevation: 4,
-              }
+              },
             }}
           >
             <Box
@@ -340,29 +341,29 @@ export default function HomePage() {
                 animation: 'pulse 2s infinite',
                 '@keyframes pulse': {
                   '0%, 100%': { opacity: 1 },
-                  '50%': { opacity: 0.7 }
-                }
+                  '50%': { opacity: 0.7 },
+                },
               }}
             >
               🚀
             </Box>
             <Box sx={{ flex: { xs: 1, md: 'unset' } }}>
-              <Typography 
-                variant="h6" 
-                sx={{ 
-                  mb: { xs: 0.5, md: 1 }, 
+              <Typography
+                variant="h6"
+                sx={{
+                  mb: { xs: 0.5, md: 1 },
                   fontWeight: 600,
-                  fontSize: { xs: '1.125rem', md: '1.125rem' }
+                  fontSize: { xs: '1.125rem', md: '1.125rem' },
                 }}
               >
                 Phase 2: In Transit
               </Typography>
-              <Typography 
-                variant="body2" 
-                sx={{ 
+              <Typography
+                variant="body2"
+                sx={{
                   lineHeight: 1.5,
                   fontSize: { xs: '0.875rem', md: '0.875rem' },
-                  mb: { xs: 1, md: 2 }
+                  mb: { xs: 1, md: 2 },
                 }}
               >
                 Link traveling to Lagrange Point L5 - ETA: 47 standard days
@@ -376,12 +377,12 @@ export default function HomePage() {
                   display: 'inline-block',
                 }}
               >
-                <Typography 
-                  variant="caption" 
-                  sx={{ 
-                    color: 'white', 
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: 'white',
                     fontWeight: 600,
-                    fontSize: '0.75rem'
+                    fontSize: '0.75rem',
                   }}
                 >
                   IN PROGRESS
@@ -409,7 +410,7 @@ export default function HomePage() {
               '&:hover': {
                 opacity: 1,
                 transform: 'translateY(-2px)',
-              }
+              },
             }}
           >
             <Box
@@ -429,22 +430,22 @@ export default function HomePage() {
               ⏳
             </Box>
             <Box sx={{ flex: { xs: 1, md: 'unset' } }}>
-              <Typography 
-                variant="h6" 
-                sx={{ 
-                  mb: { xs: 0.5, md: 1 }, 
+              <Typography
+                variant="h6"
+                sx={{
+                  mb: { xs: 0.5, md: 1 },
                   fontWeight: 600,
-                  fontSize: { xs: '1.125rem', md: '1.125rem' }
+                  fontSize: { xs: '1.125rem', md: '1.125rem' },
                 }}
               >
                 Phase 3: Deployment Pending
               </Typography>
-              <Typography 
-                variant="body2" 
-                sx={{ 
+              <Typography
+                variant="body2"
+                sx={{
                   lineHeight: 1.5,
                   fontSize: { xs: '0.875rem', md: '0.875rem' },
-                  mb: { xs: 1, md: 2 }
+                  mb: { xs: 1, md: 2 },
                 }}
               >
                 Deep space operations will commence upon successful deployment
@@ -458,12 +459,12 @@ export default function HomePage() {
                   display: 'inline-block',
                 }}
               >
-                <Typography 
-                  variant="caption" 
-                  sx={{ 
-                    color: 'white', 
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: 'white',
                     fontWeight: 600,
-                    fontSize: '0.75rem'
+                    fontSize: '0.75rem',
                   }}
                 >
                   PENDING
@@ -472,17 +473,19 @@ export default function HomePage() {
             </Box>
           </Paper>
         </Box>
-        
-        <Box sx={{ 
-          mt: 3, 
-          pt: 3, 
-          borderTop: '1px solid', 
-          backgroundColor: 'background.paper',
-          borderRadius: 2,
-          p: 2,
-          border: '1px solid',
-          borderColor: 'grey.200',
-        }}>
+
+        <Box
+          sx={{
+            mt: 3,
+            pt: 3,
+            borderTop: '1px solid',
+            backgroundColor: 'background.paper',
+            borderRadius: 2,
+            p: 2,
+            border: '1px solid',
+            borderColor: 'grey.200',
+          }}
+        >
           <Typography
             variant="body2"
             sx={{
@@ -493,7 +496,9 @@ export default function HomePage() {
               lineHeight: 1.5,
             }}
           >
-            "Establishing humanity's first permanent deep space mining infrastructure requires patience, precision, and unwavering commitment to progress."
+            "Establishing humanity's first permanent deep space mining
+            infrastructure requires patience, precision, and unwavering
+            commitment to progress."
           </Typography>
         </Box>
       </Paper>

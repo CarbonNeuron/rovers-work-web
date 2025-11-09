@@ -20,22 +20,24 @@ const notoColorEmoji = Noto_Color_Emoji({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rovers.work'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://rovers.work'
+  ),
   title: {
     default: 'rovers.work - Universal Opportunities Remote Operations Portal',
-    template: '%s | Universal Opportunities'
+    template: '%s | Universal Opportunities',
   },
   description:
     'Remote mining rover operations portal for Universal Opportunities contractors. Control advanced mining rovers across distant planets, manage fleet operations, trade resources, and access fabrication systems.',
   keywords: [
     'remote operations',
-    'mining rovers', 
+    'mining rovers',
     'space mining',
     'fleet management',
     'resource trading',
     'planetary operations',
     'Universal Opportunities',
-    'rovers.work'
+    'rovers.work',
   ],
   authors: [{ name: 'Universal Opportunities Corporation' }],
   creator: 'Universal Opportunities',
@@ -57,7 +59,8 @@ export const metadata: Metadata = {
     url: 'https://rovers.work',
     siteName: 'Universal Opportunities Remote Operations Portal',
     title: 'rovers.work - Universal Opportunities Remote Operations Portal',
-    description: 'Remote mining rover operations portal for Universal Opportunities contractors. Control advanced mining rovers across distant planets.',
+    description:
+      'Remote mining rover operations portal for Universal Opportunities contractors. Control advanced mining rovers across distant planets.',
     images: [
       {
         url: '/favicon.svg',
@@ -70,7 +73,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'rovers.work - Universal Opportunities Remote Operations Portal',
-    description: 'Remote mining rover operations portal for Universal Opportunities contractors.',
+    description:
+      'Remote mining rover operations portal for Universal Opportunities contractors.',
     creator: '@UniversalOpportunities',
   },
   alternates: {
@@ -79,7 +83,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-16.svg', type: 'image/svg+xml', sizes: '16x16' }
+      { url: '/favicon-16.svg', type: 'image/svg+xml', sizes: '16x16' },
     ],
     apple: [
       { url: '/apple-touch-icon.svg', type: 'image/svg+xml', sizes: '180x180' },
@@ -94,13 +98,11 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body 
+      <body
         className={`${geistSans.variable} ${geistMono.variable} ${notoColorEmoji.variable}`}
         suppressHydrationWarning={true}
       >
-        <MUISetup theme={theme}>
-          {children}
-        </MUISetup>
+        <MUISetup theme={theme}>{children}</MUISetup>
       </body>
     </html>
   );

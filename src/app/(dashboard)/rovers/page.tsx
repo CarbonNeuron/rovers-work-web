@@ -13,11 +13,19 @@ import {
 
 export const metadata: Metadata = {
   title: 'Rovers - Fleet Management',
-  description: 'Manage your fleet of mining rovers across multiple planets. Monitor rover status, control operations, and track performance metrics in real-time.',
-  keywords: ['rovers', 'fleet management', 'mining robots', 'remote control', 'planetary mining'],
+  description:
+    'Manage your fleet of mining rovers across multiple planets. Monitor rover status, control operations, and track performance metrics in real-time.',
+  keywords: [
+    'rovers',
+    'fleet management',
+    'mining robots',
+    'remote control',
+    'planetary mining',
+  ],
   openGraph: {
     title: 'Rovers Fleet Management - Universal Opportunities',
-    description: 'Advanced fleet management system for controlling mining rovers across distant planets.',
+    description:
+      'Advanced fleet management system for controlling mining rovers across distant planets.',
     url: '/rovers',
   },
 };
