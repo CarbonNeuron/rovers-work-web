@@ -1,9 +1,7 @@
 import React from 'react';
 import {
-  Container,
   Typography,
   Paper,
-  Box,
   Card,
   CardContent,
   Divider,
@@ -12,6 +10,8 @@ import {
   ListItemText,
   Stack,
 } from '@mui/material';
+import PageContainer from '@/components/PageContainer';
+import PageHeader from '@/components/PageHeader';
 
 // Generate stable random data for each section
 const generateSectionData = (index: number) => {
@@ -29,31 +29,11 @@ const generateSectionData = (index: number) => {
 
 export default function TestScrollPage() {
   return (
-    <Container maxWidth={false} sx={{ py: { xs: 2, sm: 4 } }}>
-      {/* Header */}
-      <Box sx={{ mb: { xs: 3, sm: 4 } }}>
-        <Typography
-          variant="h1"
-          component="h1"
-          gutterBottom
-          sx={{
-            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
-            textAlign: { xs: 'center', sm: 'left' },
-          }}
-        >
-          Scroll Test Page
-        </Typography>
-        <Typography
-          variant="h6"
-          color="text.secondary"
-          sx={{
-            fontSize: { xs: '1rem', sm: '1.25rem' },
-            textAlign: { xs: 'center', sm: 'left' },
-          }}
-        >
-          Testing mobile drawer behavior and page scrolling
-        </Typography>
-      </Box>
+    <PageContainer>
+      <PageHeader
+        title="Scroll Test Page"
+        subtitle="Testing mobile drawer behavior and page scrolling"
+      />
 
       {/* Long Content Sections */}
       {Array.from({ length: 10 }, (_, index) => {
@@ -191,6 +171,6 @@ export default function TestScrollPage() {
           working correctly!
         </Typography>
       </Paper>
-    </Container>
+    </PageContainer>
   );
 }
