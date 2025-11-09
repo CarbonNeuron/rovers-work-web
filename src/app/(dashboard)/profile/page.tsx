@@ -10,14 +10,12 @@ import {
   ListItemText,
 } from '@mui/material';
 import {
-  Person as ProfileIcon,
   EmojiEvents as BadgeIcon,
   Assessment as StatIcon,
   TrendingUp as EfficiencyIcon,
   Timeline as CareerIcon,
   Settings as SettingsIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 
 export default function ProfilePage() {
   return (

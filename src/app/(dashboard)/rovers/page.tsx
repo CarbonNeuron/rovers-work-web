@@ -36,7 +36,6 @@ import {
   TouchApp as ControlIcon,
   BatteryFull as BatteryIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 
 export default function RoversPage() {
   return (

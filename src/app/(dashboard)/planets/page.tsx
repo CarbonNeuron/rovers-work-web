@@ -16,7 +16,6 @@ import {
   Category as ResourceIcon,
   Schedule as TimeIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 
 export default function PlanetsPage() {
   return (

@@ -16,7 +16,6 @@ import {
   ShowChart as ChartIcon,
   Update as UpdateIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 
 export default function MarketPage() {
   return (

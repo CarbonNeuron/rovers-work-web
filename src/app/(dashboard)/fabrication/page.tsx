@@ -16,7 +16,6 @@ import {
   Category as AllocationIcon,
   TrackChanges as TrackingIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 
 export default function FabricationPage() {
   return (

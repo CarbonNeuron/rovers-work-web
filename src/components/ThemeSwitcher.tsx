@@ -55,7 +55,7 @@ export default function ThemeSwitcher({ sx = [] }: ThemeSwitcherProps) {
       onClick={handleThemeToggle}
       onKeyDown={handleKeyDown}
       aria-label={`Switch to ${nextTheme} mode`}
-      aria-pressed={currentTheme === 'dark'}
+      aria-checked={currentTheme === 'dark'}
       aria-describedby="theme-status"
       role="switch"
       title={`Currently in ${currentTheme} mode. Click to switch to ${nextTheme} mode.`}

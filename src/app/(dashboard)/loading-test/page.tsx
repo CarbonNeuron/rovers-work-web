@@ -13,7 +13,6 @@ import {
   Preview as PreviewIcon,
   Refresh as RefreshIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 import Loading from '@/app/loading';
 
 export default function LoadingTestPage() {

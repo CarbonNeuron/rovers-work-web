@@ -9,15 +9,12 @@ import {
   CardContent,
   Stack,
   Chip,
-  useTheme,
   alpha,
 } from '@mui/material';
 import {
-  RocketLaunch as RocketIcon,
   Home as HomeIcon,
   Dashboard as DashboardIcon,
   Warning as WarningIcon,
-  Satellite as SatelliteIcon,
 } from '@mui/icons-material';
 import Link from 'next/link';
 import { keyframes } from '@mui/system';
@@ -51,8 +48,6 @@ const pulseAnimation = keyframes`
 `;
 
 export default function NotFound() {
-  const theme = useTheme();
-
   const handleSystemDiagnostics = () => {
     // Simulate system diagnostics with a fun alert
     const diagnostics = [

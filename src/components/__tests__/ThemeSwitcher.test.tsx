@@ -74,11 +74,11 @@ describe('ThemeSwitcher', () => {
     expect(button).toBeInTheDocument();
   });
 
-  it('has proper aria-pressed state', () => {
+  it('has proper aria-checked state', () => {
     render(<ThemeSwitcher />);
 
     const button = screen.getByRole('switch');
-    expect(button).toHaveAttribute('aria-pressed', 'false');
+    expect(button).toHaveAttribute('aria-checked', 'false');
   });
 
   it('includes status element for screen readers', () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Box, useTheme, useMediaQuery, Toolbar } from '@mui/material';
+import { Box, Toolbar } from '@mui/material';
 import Navigation from './Navigation';
 
 interface DashboardLayoutProps {

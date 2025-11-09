@@ -4,7 +4,7 @@ import { LinkBehavior } from '../LinkBehavior';
 
 // Mock next/link
 jest.mock('next/link', () => {
-  return React.forwardRef<
+  const MockedLink = React.forwardRef<
     HTMLAnchorElement,
     { children: React.ReactNode; href: string }
   >(({ children, href, ...props }, ref) => {
@@ -14,6 +14,8 @@ jest.mock('next/link', () => {
       </a>
     );
   });
+  MockedLink.displayName = 'NextLink';
+  return MockedLink;
 });
 
 describe('LinkBehavior', () => {
