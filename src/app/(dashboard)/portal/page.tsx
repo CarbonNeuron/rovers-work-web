@@ -114,6 +114,38 @@ export default function PortalPage() {
         </Typography>
       </Box>
 
+      {/* Infrastructure Deployment Banner */}
+      <Paper
+        elevation={1}
+        sx={{
+          p: { xs: 2, sm: 3 },
+          mb: { xs: 3, sm: 4 },
+          backgroundColor: 'warning.main',
+          color: 'warning.contrastText',
+          textAlign: 'center',
+        }}
+      >
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{
+            fontSize: { xs: '1rem', sm: '1.125rem' },
+            fontWeight: 600,
+            mb: 0.5,
+          }}
+        >
+          🚧 Universal Opportunities is Currently Deploying Critical Infrastructure
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{
+            fontSize: { xs: '0.875rem', sm: '0.9375rem' },
+          }}
+        >
+          Remote planetary operations will be available once inter-system communication links are established
+        </Typography>
+      </Paper>
+
       {/* Metrics Grid */}
       <Box
         sx={{
@@ -147,8 +179,8 @@ export default function PortalPage() {
         />
         <MetricCard
           title="System Status"
-          value="Operational"
-          label="All Systems Green"
+          value="Offline"
+          label="Infrastructure Deployment"
           icon={StatusIcon}
         />
       </Box>

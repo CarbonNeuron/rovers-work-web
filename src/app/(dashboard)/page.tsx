@@ -29,7 +29,14 @@ export default function HomePage() {
   return (
     <Container
       maxWidth={false}
-      sx={{ py: { xs: 2, sm: 4 }, px: { xs: 2, sm: 3 } }}
+      sx={{ 
+        py: { xs: 2, sm: 4 }, 
+        px: { xs: 1, sm: 2, md: 3 },
+        width: '100%',
+        maxWidth: '100%',
+        overflow: 'hidden',
+        boxSizing: 'border-box',
+      }}
     >
       {/* Header Section */}
       <Box sx={{ mb: { xs: 4, sm: 6 } }}>
@@ -96,6 +103,400 @@ export default function HomePage() {
           </Button>
         </Box>
       </Box>
+
+      {/* Communication Link Timeline */}
+      <Paper
+        elevation={2}
+        sx={{
+          p: { xs: 2, sm: 3, md: 4 },
+          mb: { xs: 4, sm: 6 },
+          borderRadius: 3,
+          border: '2px solid',
+          borderColor: 'primary.main',
+          background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%)',
+          overflow: 'hidden',
+          width: '100%',
+          maxWidth: '100%',
+          boxSizing: 'border-box',
+        }}
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 48,
+              height: 48,
+              borderRadius: '50%',
+              backgroundColor: 'primary.main',
+              mr: 2,
+              color: 'white',
+            }}
+          >
+            <RocketIcon sx={{ fontSize: 28 }} />
+          </Box>
+          <Box>
+            <Typography
+              variant="h5"
+              component="div"
+              sx={{
+                fontSize: { xs: '1.125rem', sm: '1.375rem' },
+                fontWeight: 700,
+                color: 'text.primary',
+                mb: 0.5,
+              }}
+            >
+              Deep Space Communication Link
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              sx={{
+                fontSize: { xs: '0.825rem', sm: '0.9375rem' },
+                color: 'text.secondary',
+                fontWeight: 500,
+              }}
+            >
+              Deployment Timeline & Status
+            </Typography>
+          </Box>
+        </Box>
+        
+        {/* Progress Bar */}
+        <Box sx={{ mb: 3, overflow: 'hidden' }}>
+          <Box
+            sx={{
+              height: 8,
+              backgroundColor: 'grey.200',
+              borderRadius: 4,
+              overflow: 'hidden',
+              position: 'relative',
+              width: '100%',
+            }}
+          >
+            <Box
+              sx={{
+                height: '100%',
+                width: '65%',
+                background: 'linear-gradient(90deg, #10b981 0%, #06d6a0 100%)',
+                borderRadius: 4,
+                position: 'relative',
+                overflow: 'hidden',
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  right: 2,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: 12,
+                  height: 12,
+                  backgroundColor: '#06d6a0',
+                  borderRadius: '50%',
+                  border: '1px solid white',
+                  boxShadow: '0 1px 4px rgba(6, 214, 160, 0.3)',
+                }
+              }}
+            />
+          </Box>
+          <Typography
+            variant="caption"
+            sx={{
+              color: 'text.secondary',
+              fontFamily: 'var(--font-geist-mono)',
+              fontSize: '0.75rem',
+              mt: 1,
+              display: 'block',
+            }}
+          >
+            Mission Progress: 65% Complete
+          </Typography>
+        </Box>
+        
+        {/* Mobile: Vertical Timeline, Desktop: Grid */}
+        <Box 
+          sx={{ 
+            display: { xs: 'flex', md: 'grid' },
+            flexDirection: { xs: 'column', md: 'unset' },
+            gridTemplateColumns: { md: 'repeat(3, 1fr)' },
+            gap: { xs: 3, md: 3 },
+            width: '100%',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Phase 1 */}
+          <Paper
+            elevation={1}
+            sx={{
+              p: { xs: 3, sm: 3 },
+              textAlign: { xs: 'left', md: 'center' },
+              backgroundColor: 'success.light',
+              color: 'success.contrastText',
+              borderRadius: 2,
+              border: '1px solid',
+              borderColor: 'success.main',
+              transition: 'all 0.2s ease',
+              display: { xs: 'flex', md: 'block' },
+              alignItems: { xs: 'center', md: 'unset' },
+              gap: { xs: 2, md: 0 },
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                elevation: 3,
+              }
+            }}
+          >
+            <Box
+              sx={{
+                width: { xs: 48, md: 40 },
+                height: { xs: 48, md: 40 },
+                borderRadius: '50%',
+                backgroundColor: 'success.dark',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: { xs: '1.5rem', md: '1.25rem' },
+                flexShrink: 0,
+                margin: { xs: 0, md: '0 auto 8px' },
+              }}
+            >
+              ✅
+            </Box>
+            <Box sx={{ flex: { xs: 1, md: 'unset' } }}>
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  mb: { xs: 0.5, md: 1 }, 
+                  fontWeight: 600,
+                  fontSize: { xs: '1.125rem', md: '1.125rem' }
+                }}
+              >
+                Phase 1: Launch Complete
+              </Typography>
+              <Typography 
+                variant="body2" 
+                sx={{ 
+                  lineHeight: 1.5,
+                  fontSize: { xs: '0.875rem', md: '0.875rem' },
+                  mb: { xs: 1, md: 2 }
+                }}
+              >
+                Communication relay successfully launched from Luna City Station
+              </Typography>
+              <Box
+                sx={{
+                  py: 0.5,
+                  px: 2,
+                  backgroundColor: 'success.dark',
+                  borderRadius: 1,
+                  display: 'inline-block',
+                }}
+              >
+                <Typography 
+                  variant="caption" 
+                  sx={{ 
+                    color: 'white', 
+                    fontWeight: 600,
+                    fontSize: '0.75rem'
+                  }}
+                >
+                  COMPLETE
+                </Typography>
+              </Box>
+            </Box>
+          </Paper>
+
+          {/* Phase 2 */}
+          <Paper
+            elevation={2}
+            sx={{
+              p: { xs: 3, sm: 3 },
+              textAlign: { xs: 'left', md: 'center' },
+              backgroundColor: 'warning.light',
+              color: 'warning.contrastText',
+              borderRadius: 2,
+              border: '2px solid',
+              borderColor: 'warning.main',
+              transition: 'all 0.2s ease',
+              display: { xs: 'flex', md: 'block' },
+              alignItems: { xs: 'center', md: 'unset' },
+              gap: { xs: 2, md: 0 },
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                elevation: 4,
+              }
+            }}
+          >
+            <Box
+              sx={{
+                width: { xs: 48, md: 40 },
+                height: { xs: 48, md: 40 },
+                borderRadius: '50%',
+                backgroundColor: 'warning.dark',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: { xs: '1.5rem', md: '1.25rem' },
+                flexShrink: 0,
+                margin: { xs: 0, md: '0 auto 8px' },
+                animation: 'pulse 2s infinite',
+                '@keyframes pulse': {
+                  '0%, 100%': { opacity: 1 },
+                  '50%': { opacity: 0.7 }
+                }
+              }}
+            >
+              🚀
+            </Box>
+            <Box sx={{ flex: { xs: 1, md: 'unset' } }}>
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  mb: { xs: 0.5, md: 1 }, 
+                  fontWeight: 600,
+                  fontSize: { xs: '1.125rem', md: '1.125rem' }
+                }}
+              >
+                Phase 2: In Transit
+              </Typography>
+              <Typography 
+                variant="body2" 
+                sx={{ 
+                  lineHeight: 1.5,
+                  fontSize: { xs: '0.875rem', md: '0.875rem' },
+                  mb: { xs: 1, md: 2 }
+                }}
+              >
+                Link traveling to Lagrange Point L5 - ETA: 47 standard days
+              </Typography>
+              <Box
+                sx={{
+                  py: 0.5,
+                  px: 2,
+                  backgroundColor: 'warning.dark',
+                  borderRadius: 1,
+                  display: 'inline-block',
+                }}
+              >
+                <Typography 
+                  variant="caption" 
+                  sx={{ 
+                    color: 'white', 
+                    fontWeight: 600,
+                    fontSize: '0.75rem'
+                  }}
+                >
+                  IN PROGRESS
+                </Typography>
+              </Box>
+            </Box>
+          </Paper>
+
+          {/* Phase 3 */}
+          <Paper
+            elevation={1}
+            sx={{
+              p: { xs: 3, sm: 3 },
+              textAlign: { xs: 'left', md: 'center' },
+              backgroundColor: 'grey.100',
+              color: 'grey.700',
+              borderRadius: 2,
+              border: '1px solid',
+              borderColor: 'grey.300',
+              opacity: 0.8,
+              transition: 'all 0.2s ease',
+              display: { xs: 'flex', md: 'block' },
+              alignItems: { xs: 'center', md: 'unset' },
+              gap: { xs: 2, md: 0 },
+              '&:hover': {
+                opacity: 1,
+                transform: 'translateY(-2px)',
+              }
+            }}
+          >
+            <Box
+              sx={{
+                width: { xs: 48, md: 40 },
+                height: { xs: 48, md: 40 },
+                borderRadius: '50%',
+                backgroundColor: 'grey.400',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: { xs: '1.5rem', md: '1.25rem' },
+                flexShrink: 0,
+                margin: { xs: 0, md: '0 auto 8px' },
+              }}
+            >
+              ⏳
+            </Box>
+            <Box sx={{ flex: { xs: 1, md: 'unset' } }}>
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  mb: { xs: 0.5, md: 1 }, 
+                  fontWeight: 600,
+                  fontSize: { xs: '1.125rem', md: '1.125rem' }
+                }}
+              >
+                Phase 3: Deployment Pending
+              </Typography>
+              <Typography 
+                variant="body2" 
+                sx={{ 
+                  lineHeight: 1.5,
+                  fontSize: { xs: '0.875rem', md: '0.875rem' },
+                  mb: { xs: 1, md: 2 }
+                }}
+              >
+                Deep space operations will commence upon successful deployment
+              </Typography>
+              <Box
+                sx={{
+                  py: 0.5,
+                  px: 2,
+                  backgroundColor: 'grey.500',
+                  borderRadius: 1,
+                  display: 'inline-block',
+                }}
+              >
+                <Typography 
+                  variant="caption" 
+                  sx={{ 
+                    color: 'white', 
+                    fontWeight: 600,
+                    fontSize: '0.75rem'
+                  }}
+                >
+                  PENDING
+                </Typography>
+              </Box>
+            </Box>
+          </Paper>
+        </Box>
+        
+        <Box sx={{ 
+          mt: 3, 
+          pt: 3, 
+          borderTop: '1px solid', 
+          backgroundColor: 'background.paper',
+          borderRadius: 2,
+          p: 2,
+          border: '1px solid',
+          borderColor: 'grey.200',
+        }}>
+          <Typography
+            variant="body2"
+            sx={{
+              fontSize: { xs: '0.8125rem', sm: '0.9375rem' },
+              fontStyle: 'italic',
+              textAlign: 'center',
+              color: 'text.secondary',
+              lineHeight: 1.5,
+            }}
+          >
+            "Establishing humanity's first permanent deep space mining infrastructure requires patience, precision, and unwavering commitment to progress."
+          </Typography>
+        </Box>
+      </Paper>
 
       <Stack spacing={6}>
         {/* Mission Statement */}
