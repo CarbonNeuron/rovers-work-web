@@ -22,7 +22,6 @@ import {
   Groups as GroupsIcon,
   Login as PortalIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 import UniversalOpportunitiesText from '@/components/UniversalOpportunitiesText';
 
 export default function HomePage() {
@@ -496,9 +495,9 @@ export default function HomePage() {
               lineHeight: 1.5,
             }}
           >
-            "Establishing humanity's first permanent deep space mining
-            infrastructure requires patience, precision, and unwavering
-            commitment to progress."
+            &ldquo;Establishing humanity&apos;s first permanent deep space
+            mining infrastructure requires patience, precision, and unwavering
+            commitment to progress.&rdquo;
           </Typography>
         </Box>
       </Paper>
@@ -549,8 +548,8 @@ export default function HomePage() {
               color: 'text.secondary',
             }}
           >
-            "Bridging worlds, creating opportunities, building the future—one
-            mining operation at a time."
+            &ldquo;Bridging worlds, creating opportunities, building the
+            future—one mining operation at a time.&rdquo;
           </Typography>
         </Paper>
 
@@ -874,7 +873,7 @@ export default function HomePage() {
                 <br />
                 <strong>Founded:</strong> 2387 GST (Galactic Standard Time)
                 <br />
-                <strong>Headquarters:</strong> Luna City, Earth's Moon
+                <strong>Headquarters:</strong> Luna City, Earth&apos;s Moon
                 <br />
                 <strong>Operations:</strong> 47 Star Systems, 180+ Planets
               </Typography>
@@ -938,7 +937,7 @@ export default function HomePage() {
           >
             Universal Opportunities offers competitive compensation packages,
             comprehensive training programs, and the chance to be part of
-            humanity's expansion into the cosmos. Your expertise in remote
+            humanity&apos;s expansion into the cosmos. Your expertise in remote
             operations could unlock opportunities beyond imagination.
           </Typography>
           <Button
@@ -971,7 +970,7 @@ export default function HomePage() {
               fontFamily: 'var(--font-geist-mono)',
             }}
           >
-            "The universe is vast, but opportunity is universal."
+            &ldquo;The universe is vast, but opportunity is universal.&rdquo;
           </Typography>
         </Paper>
       </Stack>

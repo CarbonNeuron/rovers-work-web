@@ -13,6 +13,17 @@ import {
 import PageContainer from '@/components/PageContainer';
 import PageHeader from '@/components/PageHeader';
 
+// Generate random data once outside of render to avoid purity violations
+const sectionData = Array.from({ length: 10 }, (_, index) => ({
+  id: index,
+  activeRovers: Math.floor(Math.random() * 20) + 5,
+  resourcesCollected: Math.floor(Math.random() * 1000) + 500,
+  systemEfficiency: Math.floor(Math.random() * 20) + 80,
+  maintenanceDays: Math.floor(Math.random() * 30) + 1,
+  rareEarthPercentage: Math.floor(Math.random() * 40) + 10,
+  projectedDays: Math.floor(Math.random() * 60) + 30,
+}));
+
 export default function TestScrollPage() {
   return (
     <PageContainer>
@@ -22,7 +33,7 @@ export default function TestScrollPage() {
       />
 
       {/* Long Content Sections */}
-      {Array.from({ length: 10 }, (_, index) => (
+      {sectionData.map((data, index) => (
         <Paper
           key={index}
           elevation={1}
@@ -57,25 +68,25 @@ export default function TestScrollPage() {
                   <ListItem>
                     <ListItemText
                       primary="Active Rovers"
-                      secondary={`${Math.floor(Math.random() * 20) + 5} units deployed`}
+                      secondary={`${data.activeRovers} units deployed`}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
                       primary="Resources Collected"
-                      secondary={`${Math.floor(Math.random() * 1000) + 500} tons this cycle`}
+                      secondary={`${data.resourcesCollected} tons this cycle`}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
                       primary="System Efficiency"
-                      secondary={`${Math.floor(Math.random() * 20) + 80}% operational capacity`}
+                      secondary={`${data.systemEfficiency}% operational capacity`}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
                       primary="Next Maintenance Window"
-                      secondary={`${Math.floor(Math.random() * 30) + 1} days from now`}
+                      secondary={`${data.maintenanceDays} days from now`}
                     />
                   </ListItem>
                 </List>
@@ -90,20 +101,20 @@ export default function TestScrollPage() {
                 <Typography variant="body2" paragraph>
                   The mining operations in this sector have yielded exceptional
                   results, with rare earth elements comprising{' '}
-                  {Math.floor(Math.random() * 40) + 10}% of total extracted
-                  materials. Quality assessments indicate optimal purity levels
-                  across all mineral categories.
+                  {data.rareEarthPercentage}% of total extracted materials.
+                  Quality assessments indicate optimal purity levels across all
+                  mineral categories.
                 </Typography>
                 <Typography variant="body2" paragraph>
                   Environmental impact assessments show minimal disruption to
-                  planetary ecosystems, maintaining Universal Opportunities'
-                  commitment to sustainable extraction practices across all
-                  operational theaters.
+                  planetary ecosystems, maintaining Universal
+                  Opportunities&apos; commitment to sustainable extraction
+                  practices across all operational theaters.
                 </Typography>
                 <Typography variant="body2">
                   Projected completion of current contracts:{' '}
-                  {Math.floor(Math.random() * 60) + 30} days, with potential for
-                  early delivery pending favorable atmospheric conditions.
+                  {data.projectedDays} days, with potential for early delivery
+                  pending favorable atmospheric conditions.
                 </Typography>
               </CardContent>
             </Card>
