@@ -18,9 +18,12 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     }
 
     // Set up observer to watch for style changes on body
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (
+          mutation.type === 'attributes' &&
+          mutation.attributeName === 'style'
+        ) {
           // If body overflow is set to hidden, remove it
           if (document.body.style.overflow === 'hidden') {
             document.body.style.removeProperty('overflow');

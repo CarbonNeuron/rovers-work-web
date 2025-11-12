@@ -50,7 +50,7 @@
   padding: 12px 20px;
   text-decoration: none;
   color: var(--dashboard-nav-text);
-  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 3px solid transparent;
   gap: 2px;
   position: relative;
@@ -65,10 +65,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, 
-    rgba(37, 99, 235, 0) 0%, 
-    rgba(37, 99, 235, 0.05) 50%, 
-    rgba(37, 99, 235, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0) 0%,
+    rgba(37, 99, 235, 0.05) 50%,
+    rgba(37, 99, 235, 0) 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -93,10 +95,12 @@
 
 .navItem.active::before {
   opacity: 1;
-  background: linear-gradient(90deg, 
-    rgba(37, 99, 235, 0.1) 0%, 
-    rgba(37, 99, 235, 0.2) 50%, 
-    rgba(37, 99, 235, 0.1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.1) 0%,
+    rgba(37, 99, 235, 0.2) 50%,
+    rgba(37, 99, 235, 0.1) 100%
+  );
 }
 
 .navItem.active:hover {
