@@ -33,11 +33,6 @@ const AnimatedGradientText = styled(Typography)(({ theme }) => ({
     color: 'transparent',
     WebkitTextFillColor: 'transparent',
   },
-  
-  // Enhanced gradient for better wave effect
-  '&:hover': {
-    animationDuration: '2s',
-  },
 }));
 
 interface UniversalOpportunitiesTextProps extends Omit<TypographyProps, 'children'> {
