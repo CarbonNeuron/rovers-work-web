@@ -93,7 +93,7 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    setMobileOpen(x => !x);
     onMobileMenuToggle?.();
   };
 
@@ -101,25 +101,25 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       {/* Mobile spacing toolbar */}
       <Toolbar sx={{ display: { xs: 'block', md: 'none' } }} />
-      
+
       {/* Header */}
       <Box sx={{ p: 3, borderBottom: 1, borderColor: 'divider' }}>
         <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <UniversalOpportunitiesText 
-            variant="h6" 
+          <UniversalOpportunitiesText
+            variant="h6"
             component="div"
             speed={0.8}
             pauseOnHover={true}
           />
           <Typography
             variant="caption"
-            sx={{ 
-              color: (theme) => 
-                theme.palette.mode === 'dark' 
-                  ? theme.palette.grey[400] 
+            sx={{
+              color: theme =>
+                theme.palette.mode === 'dark'
+                  ? theme.palette.grey[400]
                   : theme.palette.grey[300],
-              mt: 0.5, 
-              display: 'block' 
+              mt: 0.5,
+              display: 'block',
             }}
           >
             Remote Operations Portal
@@ -139,15 +139,15 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
               <ListItemButton
                 href={item.href}
                 selected={isActive}
-                onClick={handleDrawerToggle}
+                onClick={() => setMobileOpen(false)}
                 sx={{ mx: 1, borderRadius: 1 }}
               >
-                <ListItemIcon 
-                  sx={{ 
-                    color: (theme) => 
-                      theme.palette.mode === 'dark' 
-                        ? theme.palette.grey[100] 
-                        : theme.palette.grey[100] 
+                <ListItemIcon
+                  sx={{
+                    color: theme =>
+                      theme.palette.mode === 'dark'
+                        ? theme.palette.grey[100]
+                        : theme.palette.grey[100],
                   }}
                 >
                   <IconComponent />
@@ -165,15 +165,15 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
                   }}
                   sx={{
                     '& .MuiListItemText-primary': {
-                      color: (theme) => 
-                        theme.palette.mode === 'dark' 
-                          ? theme.palette.grey[100] 
+                      color: theme =>
+                        theme.palette.mode === 'dark'
+                          ? theme.palette.grey[100]
                           : theme.palette.grey[100],
                     },
                     '& .MuiListItemText-secondary': {
-                      color: (theme) => 
-                        theme.palette.mode === 'dark' 
-                          ? theme.palette.grey[400] 
+                      color: theme =>
+                        theme.palette.mode === 'dark'
+                          ? theme.palette.grey[400]
                           : theme.palette.grey[300],
                     },
                   }}
@@ -211,9 +211,9 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
   return (
     <>
       {/* Mobile App Bar */}
-      <AppBar 
-        position="fixed" 
-        sx={(theme) => ({
+      <AppBar
+        position="fixed"
+        sx={theme => ({
           display: { xs: 'block', md: 'none' },
           zIndex: theme.zIndex.drawer + 1,
           backgroundColor: '#1e293b',
@@ -235,9 +235,9 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
             <MenuIcon />
           </IconButton>
           <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <UniversalOpportunitiesText 
-              variant="h6" 
-              noWrap 
+            <UniversalOpportunitiesText
+              variant="h6"
+              noWrap
               component="div"
               speed={0.6}
               pauseOnHover={true}
@@ -249,7 +249,7 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
       {/* Desktop Permanent Drawer */}
       <Drawer
         variant="permanent"
-        sx={(theme) => ({
+        sx={theme => ({
           display: { xs: 'none', md: 'block' },
           width: DRAWER_WIDTH,
           flexShrink: 0,
@@ -278,9 +278,9 @@ export default function Navigation({ onMobileMenuToggle }: NavigationProps) {
         ModalProps={{
           keepMounted: true, // Better open performance on mobile.
         }}
-        sx={(theme) => ({
+        sx={theme => ({
           display: { xs: 'block', md: 'none' },
-          height: "100dvh",
+          height: '100dvh',
           zIndex: theme.zIndex.appBar + 1,
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
