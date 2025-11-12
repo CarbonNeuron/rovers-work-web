@@ -23,7 +23,7 @@
     "@mui/system": "^7.3.5",
     "@types/pixi.js": "^4.8.9",
     "@types/socket.io-client": "^1.4.36",
-    "next": "16.0.1",
+    "next": "16.0.2",
     "pixi.js": "^8.14.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -31,11 +31,11 @@
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "19.2.4",
+    "@types/react-dom": "19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.0.1",
+    "eslint-config-next": "16.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
@@ -51,5 +51,9 @@
     "not IE 11",
     "not dead",
     "not < 2%"
-  ]
+  ],
+  "overrides": {
+    "@types/react": "19.2.4",
+    "@types/react-dom": "19.2.3"
+  }
 }
