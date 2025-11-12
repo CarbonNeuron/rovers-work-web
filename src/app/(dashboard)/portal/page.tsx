@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import {
   Container,
   Typography,
-  Grid,
   Paper,
   Box,
   Button,
@@ -37,7 +36,6 @@ import {
   TrendingUp as MarketIcon,
   Assignment as BoardIcon,
 } from '@mui/icons-material';
-import DashboardLayout from '@/components/DashboardLayout';
 
 const MetricCard = ({
   title,
